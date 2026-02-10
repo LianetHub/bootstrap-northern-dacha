@@ -1,0 +1,130 @@
+.fancybox-bg {
+	background: rgba($color: #134e26, $alpha: 0.9);
+}
+
+.fancybox__content {
+	color: inherit;
+	background: none;
+	padding: 0;
+}
+
+.fancybox__content :focus:not(.carousel__button.is-close) {
+	outline: none;
+}
+
+.fancybox-slide--html .fancybox-close-small {
+	width: 54px;
+	height: 54px;
+	border-radius: 1000px;
+	border: 1px solid rgba(255, 244, 244, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(50px);
+	-webkit-backdrop-filter: blur(50px);
+	color: #fff;
+	top: 20px;
+	right: 20px;
+	transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+	@media (any-hover: hover) {
+		&:hover {
+			border: 1px solid rgba(255, 244, 244, 0.5);
+			background: rgba(255, 255, 255, 0.5);
+			color: #000;
+		}
+	}
+}
+
+.popup {
+	display: none;
+	width: 100%;
+	max-width: 560px;
+	&.popup-lg {
+		max-width: 662px;
+	}
+	border-radius: 20px;
+	padding: 0;
+	// .popup__caption
+	&__caption {
+		height: 280px;
+	}
+	// .popup__body
+	&__body {
+		padding: 35px 15px;
+		@media (min-width: $md5) {
+			padding: 45px 56px;
+		}
+	}
+	// .popup__title
+	&__title {
+	}
+	// .popup__bid
+	&__bid {
+		margin-top: 24px;
+		border-radius: 27px;
+		border: 1px solid rgba(51, 48, 42, 0.1);
+		background: rgba(240, 239, 233, 0.1);
+		backdrop-filter: blur(250px);
+		-webkit-backdrop-filter: blur(250px);
+		padding: 19px 30px;
+		font-size: 13px;
+		font-weight: 500;
+		margin-bottom: 8px;
+	}
+	// .popup__bid-caption
+	&__bid-caption {
+		color: #62615b;
+		margin-bottom: 11px;
+	}
+	// .popup__bid-body
+	&__bid-body {
+	}
+
+	// .popup__tabs
+	&__tabs {
+		margin-top: 20px;
+		gap: 8px;
+
+		@media (min-width: $md5) {
+			padding: 20px 30px;
+			border: 1px solid rgba(51, 48, 42, 0.1);
+			background: rgba(240, 239, 233, 0.1);
+			backdrop-filter: blur(250px);
+			-webkit-backdrop-filter: blur(250px);
+			border-radius: 100px;
+		}
+	}
+	// .popup__tab-btn
+	&__tab-btn {
+		color: #134e26;
+		font-size: 15px;
+		font-weight: 600;
+		letter-spacing: -0.45px;
+		padding: 17px;
+		flex: 1 1 auto;
+		border-radius: 100px;
+		background: #f0efe9;
+		color: #33302a;
+		text-align: center;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		&.active {
+			background: #d8e4c9;
+			color: #134e26;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: #d8e4c9;
+				color: #134e26;
+			}
+		}
+	}
+	// .popup__tabs-blocks
+	&__tabs-blocks {
+		margin-top: 30px;
+	}
+	// .popup__tabs-block
+	&__tabs-block {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}

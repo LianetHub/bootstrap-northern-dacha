@@ -1,0 +1,149 @@
+// Использование модулей SASS
+@use "sass:math";
+// Использование модулей SASS
+// ======================================МИКСИНЫ==============================================
+@import "mixins";
+
+// ======================================МИКСИНЫ==============================================
+// @import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "reset";
+// ======================================ШРИФТЫ===============================================
+
+// &display=swap&subset=cyrillic-ext
+@import "fonts";
+
+// ======================================ШРИФТЫ===============================================
+// ======================================ИКОНОЧНЫЙ ШРИФТ======================================
+@import "icons";
+// ======================================ИКОНОЧНЫЙ ШРИФТ======================================
+
+// Шрифт по умолчанию
+$fontfamily: "VelaSans";
+$font-manrope: "Manrope";
+// Шрифт по умолчанию
+
+// ПЕРЕМЕННЫЕ
+$minWidth: 320; // Минимальная ширина страницы
+$maxWidth: 1920; // Ширина макета
+$maxWidthContainer: 1170; // Максимальная ширина ограничивающего контейнера
+$containerPadding: 30;
+
+$md-xxl: 1900px;
+$md0: 1599.98px;
+$md1: 1399.98px;
+$md2: 1199.98px;
+$md3: 991.98px;
+$md4: 767.98px;
+$md5: 575.98px;
+$md6: 379.98px;
+
+$header: var(--header-height, 126px);
+
+$text: #33302a;
+$light: #efe9e5;
+$grey: #acacac;
+$accent: #c68a23;
+$secondary: #d4cd8e;
+
+// ПЕРЕМЕННЫЕ
+
+//ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ
+body {
+	font-family: $fontfamily, sans-serif;
+	color: $text;
+	min-width: 320px;
+	line-height: normal;
+
+	&.lock {
+		overflow: hidden;
+	}
+	&.lock-menu {
+		@media (max-width: $md3) {
+			overflow: hidden;
+		}
+	}
+	&._touch {
+	}
+	&.scrolled-half {
+		.page {
+			&::before {
+				opacity: 1;
+			}
+			.benefits__card {
+				background: #f0efe9;
+			}
+		}
+	}
+}
+// ==================ОБОЛОЧКА==============================
+.wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+//================== ОБОЛОЧКА==================================
+
+//=============== ОСНОВНАЯ СЕТКА===============================
+
+//=============== ОСНОВНАЯ СЕТКА===============================
+
+//=================Подключаем файлы стилей
+//================Общий файл для элементов страницы
+@import "ui";
+@import "forms";
+//================Общий файл для элементов страницы
+@import "header";
+@import "footer";
+//=======================================
+
+// =======================ОСНОВНОЙ БЛОК==================
+.page {
+	flex: 1 1 auto;
+	overflow-x: clip;
+	z-index: 2;
+	background: url("@img/bg.png") 0 0 / cover repeat-y, #f0efe9;
+	background-attachment: fixed;
+	@media (min-width: $md2) {
+		margin-bottom: 750px;
+	}
+	@media (min-width: $md1) {
+		margin-bottom: 742px;
+	}
+	@media (min-width: $md0) {
+		margin-bottom: 648px;
+	}
+	@media (min-width: $md-xxl) {
+		margin-bottom: 616px;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		transition: opacity 0.3s ease;
+		background: #fff;
+		opacity: 0;
+		@media (min-width: $md2) {
+			bottom: 750px;
+		}
+		@media (min-width: $md1) {
+			bottom: 742px;
+		}
+		@media (min-width: $md0) {
+			bottom: 648px;
+		}
+		@media (min-width: $md-xxl) {
+			bottom: 616px;
+		}
+	}
+}
+
+// =======================ОСНОВНОЙ БЛОК===================
+
+@import "pages/home";
+@import "pages/project";

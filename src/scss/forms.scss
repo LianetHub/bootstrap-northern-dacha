@@ -1,0 +1,276 @@
+.form {
+	gap: 10px;
+	&-control {
+		border-radius: 1000px;
+		border: 1px solid rgba(51, 48, 42, 0.1);
+		background: #fff;
+		color: #33302a;
+		height: auto;
+		font-size: 13px;
+		font-weight: 500;
+		width: 100%;
+		text-overflow: ellipsis;
+		padding: 18px 30px 18px;
+		min-height: 54px;
+		padding: 19px 30px 19px;
+
+		&:is(textarea) {
+			height: 108px !important;
+			resize: none;
+			border-radius: 20px;
+		}
+		&::placeholder {
+			opacity: 1;
+			color: #62615b;
+		}
+		&:focus {
+			outline: none;
+			color: inherit;
+			border-color: inherit;
+			background: #fff;
+			box-shadow: none;
+			border-color: #134e26;
+		}
+
+		&._error {
+			background: #ffdbdb;
+			border-color: #ffdbdb;
+		}
+		&[name="time"] {
+			padding-right: 40px !important;
+			&::-webkit-calendar-picker-indicator {
+				background: transparent;
+			}
+		}
+	}
+	&__caption {
+		margin-top: 10px;
+		@media (min-width: $md5) {
+			font-size: 18px;
+		}
+	}
+	// .form__body
+	&__body {
+		margin-top: 34px;
+		max-width: 650px;
+		.row {
+			--bs-gutter-x: 10px;
+			--bs-gutter-y: 19px;
+		}
+	}
+	// .form__field
+	&__field {
+		display: block;
+		position: relative;
+		&::before {
+			position: absolute;
+			top: 20px;
+			font-size: 18px;
+			right: 20px;
+			color: #134e26;
+			pointer-events: none;
+			@media (min-width: $md1) {
+				right: 38px;
+				font-size: 24px;
+			}
+		}
+		&[class*="icon"] {
+			.form-control {
+				padding-right: 60px;
+				@media (min-width: $md1) {
+					padding-right: 84px;
+				}
+			}
+		}
+	}
+	// .form__privacy
+	&__privacy {
+		margin-top: 13px;
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		color: #62615b;
+		font-size: 12px;
+		font-weight: 600;
+		& a {
+			color: #134e26;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	&__hint {
+		color: #62615b;
+		font-size: 12px;
+		font-weight: 600;
+	}
+}
+
+// <BUTTONS (a.btn+tab)>==============================
+
+.btn {
+	position: relative;
+	z-index: 1;
+	transition: all 0.3s ease;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	border-radius: 100px;
+	border: 0;
+	gap: 8px;
+	font-family: $font-manrope;
+	font-size: 11.479px;
+	font-weight: 600;
+	letter-spacing: 1.148px;
+	text-transform: uppercase;
+	min-height: 45px;
+	padding: 14px 32px;
+	@media (min-width: $md1) {
+		padding: 18px 38px;
+		min-height: 54px;
+	}
+	&::before {
+		color: currentColor;
+		font-size: em(12);
+	}
+	& .icon-arrow {
+		font-size: em(12);
+	}
+	&.icon-whatsapp {
+		&::before {
+			font-size: 1.25em;
+		}
+	}
+	&.btn-primary {
+		background: #134e26;
+		color: #fff;
+
+		&:hover {
+			background: darken($color: #134e26, $amount: 10);
+		}
+		&:focus {
+			box-shadow: 0 0 0 0.2rem rgba($color: #134e26, $alpha: 0.5);
+		}
+		&:not(:disabled):not(.disabled):active {
+			background-color: darken($color: #134e26, $amount: 15);
+			border-color: darken($color: #134e26, $amount: 15);
+		}
+	}
+	&.btn-primary-outline {
+		border: 1px solid #134e26;
+		background: transparent;
+		color: #134e26;
+
+		&:hover {
+			background: #134e26;
+			color: #fff;
+		}
+		&:focus {
+			box-shadow: 0 0 0 0.2rem rgba($color: #134e26, $alpha: 0.5);
+		}
+		&:not(:disabled):not(.disabled):active {
+			background-color: darken($color: #134e26, $amount: 10);
+			border-color: darken($color: #134e26, $amount: 10);
+			color: #fff;
+		}
+	}
+	&.btn-green {
+		background: #43d854;
+		color: #fff;
+
+		&:hover {
+			background: darken($color: #43d854, $amount: 10);
+		}
+		&:focus {
+			box-shadow: 0 0 0 0.2rem rgba($color: #43d854, $alpha: 0.5);
+		}
+		&:not(:disabled):not(.disabled):active {
+			background-color: darken($color: #43d854, $amount: 15);
+			border-color: darken($color: #43d854, $amount: 15);
+		}
+	}
+	&.btn-secondary {
+		background: #d8e4c9;
+		color: #134e26;
+
+		&:hover {
+			background: darken($color: #d8e4c9, $amount: 10);
+		}
+		&:focus {
+			box-shadow: 0 0 0 0.2rem rgba($color: #d8e4c9, $alpha: 0.5);
+		}
+		&:not(:disabled):not(.disabled):active {
+			background-color: darken($color: #d8e4c9, $amount: 15);
+			border-color: darken($color: #d8e4c9, $amount: 15);
+		}
+	}
+
+	&.btn-sm {
+		@media (min-width: $md2) {
+			padding: 20px 29px;
+			gap: 50px;
+			&::before {
+				padding: 14px;
+			}
+		}
+	}
+}
+
+.checkbox {
+	// .checkbox__input
+	&__input {
+		&:checked {
+			& + .checkbox__btn {
+				background: $text;
+				color: #fff;
+				margin-right: 50px;
+				&::before {
+					// @extend %ic, .icon-check;
+					position: absolute;
+					z-index: 1;
+					top: 0;
+					left: 100%;
+					width: 50px;
+					height: 50px;
+					font-size: 14px;
+					border-radius: 50%;
+					background: $text;
+					color: #fff;
+					flex-shrink: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					transition: background-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease, left 0.3s ease;
+				}
+			}
+		}
+	}
+	// .checkbox__btn
+	&__btn {
+		position: relative;
+		padding: 16px 30px;
+		border-radius: 100px;
+		background: #efe9e5;
+		display: block;
+		color: #121212;
+		text-align: center;
+		font-weight: 500;
+		line-height: 100%;
+		cursor: pointer;
+		@media (min-width: $md5) {
+			font-size: 18px;
+		}
+		transition: background-color 0.3s ease, color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				background: $accent;
+				color: #fff;
+			}
+		}
+	}
+}

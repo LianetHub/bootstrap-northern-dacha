@@ -1,0 +1,40 @@
+.breadcrumbs {
+	font-size: 20px;
+	font-weight: 300;
+	padding: 48px 0 20px;
+	@media (min-width: $md4) {
+		padding: 92px 0 20px;
+	}
+	& ul {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+	& li {
+		color: #9f9f9f;
+		&:not(:last-child) {
+			display: flex;
+			gap: 6px;
+			align-items: center;
+			&::after {
+				content: "-";
+			}
+		}
+		& a {
+			transition: color 0.3s ease 0s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: #303030;
+				}
+			}
+
+			&.active {
+				color: #303030;
+				font-weight: 500;
+				pointer-events: none;
+			}
+		}
+	}
+}

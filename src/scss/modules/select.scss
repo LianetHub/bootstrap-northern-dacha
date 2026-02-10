@@ -1,0 +1,41 @@
+.select {
+	position: relative;
+	&::before {
+		@extend %ic, .icon-chevron;
+		transition: transform 0.3s ease 0s;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 35px;
+		font-size: 15px;
+		transform-origin: center 0;
+		pointer-events: none;
+		color: #84a12f;
+	}
+	&:has(select:focus) {
+		&::before {
+			transform: rotate(180deg) translateY(-50%);
+		}
+	}
+
+	& select {
+		appearance: none;
+		width: 100%;
+		border-radius: 50px;
+		background: #fff;
+		border: 1px solid #fff;
+		padding: 29px 27px;
+
+		font-size: 1.25rem;
+		color: #303030;
+
+		font-size: 20px;
+		line-height: 120%;
+		text-transform: uppercase;
+		white-space: nowrap;
+		user-select: none;
+		&:focus {
+			border: 1px solid $accent;
+		}
+	}
+}

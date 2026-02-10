@@ -1,0 +1,31 @@
+.noUi-connect {
+	background-color: $accent;
+}
+
+.noUi-target {
+	height: 2px;
+	background-color: #c6c6c6;
+	border: none;
+	border-radius: 2px;
+	box-shadow: none;
+}
+
+.noUi-handle::after,
+.noUi-handle::before {
+	display: none;
+}
+
+.noUi-handle {
+	box-shadow: none;
+	border-radius: 50%;
+	background: $accent;
+	border: 0;
+	outline: 0;
+	cursor: grab;
+}
+
+.noUi-horizontal .noUi-handle {
+	width: 1rem;
+	height: 1rem;
+	right: -0.5rem;
+}

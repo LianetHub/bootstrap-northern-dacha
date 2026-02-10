@@ -1,0 +1,86 @@
+$sizeBtn: 25px;
+
+.quantity-item {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	user-select: none;
+	color: #42210b;
+	font-size: 14px;
+	@media (min-width: $md5) {
+		font-size: 17px;
+	}
+	// .quantity__btn-down
+
+	&__btn-down,
+	&__btn-up {
+		position: relative;
+		display: block;
+		z-index: 2;
+		width: 20px;
+		height: 20px;
+		@media (min-width: $md5) {
+			width: $sizeBtn;
+			height: $sizeBtn;
+		}
+		transition: background-color 0.3s ease 0s;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&.btn-disabled {
+			pointer-events: none;
+			&::before {
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: #f0edeb;
+			}
+		}
+	}
+
+	&__btn-down {
+		// right: 20px;
+		&::before {
+			content: "-";
+			top: 50%;
+			font-size: 18px;
+			@media (min-width: $md5) {
+				font-size: 24px;
+			}
+		}
+	}
+	&__btn-up {
+		// left: 16px;
+		// transform: translateY(-50%);
+		&::before {
+			content: "+";
+
+			@media (min-width: $md5) {
+				font-size: 20px;
+			}
+		}
+	}
+	// .quantity__value
+	&__value {
+		height: 20px;
+		flex: 0 0 20px;
+		@media (min-width: $md5) {
+			margin: 0 7px;
+			flex: 0 0 $sizeBtn;
+			height: $sizeBtn;
+		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #f0edeb;
+		// margin: em(0) em(10);
+	}
+	// .quantity__btn-up
+}

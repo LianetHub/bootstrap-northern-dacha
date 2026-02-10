@@ -1,0 +1,32 @@
+[
+    {
+        "index": 1,
+        "image1": "@img/projects/01.jpg",
+        "image2": "@img/projects/02.jpg",
+        "image3": "@img/projects/03.jpg"
+    },
+    {
+        "index": 2,
+        "image1": "@img/projects/04.jpg",
+        "image2": "@img/projects/05.jpg",
+        "image3": "@img/projects/06.jpg"
+    },
+    {
+        "index": 3,
+        "image1": "@img/projects/01.jpg",
+        "image2": "@img/projects/02.jpg",
+        "image3": "@img/projects/03.jpg"
+    },
+    {
+        "index": 4,
+        "image1": "@img/projects/04.jpg",
+        "image2": "@img/projects/05.jpg",
+        "image3": "@img/projects/06.jpg"
+    },
+    {
+        "index": 5,
+        "image1": "@img/projects/01.jpg",
+        "image2": "@img/projects/02.jpg",
+        "image3": "@img/projects/03.jpg"
+    }
+]
