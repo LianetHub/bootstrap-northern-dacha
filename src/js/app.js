@@ -32,64 +32,55 @@ $(function () {
 
     // click handler
     $(document).on('click', function (e) {
-
         let $target = $(e.target);
+        let $header = $('.header');
 
-        // menu
         if ($target.closest('.header__menu-toggler').length) {
-            $(".header").toggleClass("open-menu");
+            $header.toggleClass("open-menu");
         }
 
-        // accordion
+        if ($target.is('.header')) {
+            closeSubmenus();
+        }
+
         if ($target.is('.faq__item-btn')) {
-            $target.toggleClass('active').next().slideToggle()
-
+            $target.toggleClass('active').next().slideToggle();
         }
 
-        // popup tabs
         if ($target.is('.popup__tab-btn')) {
             $target.addClass('active').siblings().removeClass('active');
             $('.popup__tabs-block').eq($target.index()).addClass('active').siblings().removeClass('active');
         }
 
-        // submenu
-        if ($target.closest('.menu__link').length) {
+        if ($target.closest('.menu__link, .header__projects-btn').length) {
+            let $btn = $target.closest('.menu__link, .header__projects-btn');
+            let $submenu = $btn.next('.submenu');
 
-            let $menuLink = $target.closest('.menu__link');
-            let $submenu = $menuLink.next();
-            if ($submenu.length === 0) return;
-
-
-            if ($("body").hasClass('_pc')) return;
+            if ($submenu.length === 0 || $("body").hasClass('_pc')) return;
 
             e.preventDefault();
 
-
-            if ($menuLink.hasClass('active')) {
-
-                $menuLink.removeClass('active');
-                $submenu.removeClass('active');
-
+            if ($btn.hasClass('active')) {
+                closeSubmenus();
             } else {
-
-                $('.menu__link').removeClass('active');
-                $('.submenu').removeClass('active');
-
-                $menuLink.addClass('active');
+                $('.menu__link, .header__projects-btn, .submenu').removeClass('active');
+                $btn.addClass('active');
                 $submenu.addClass('active');
+                $header.addClass('open-submenu');
             }
-
         }
-
     });
+
+    function closeSubmenus() {
+        $('.header').removeClass('open-submenu');
+        $('.menu__link, .header__projects-btn, .submenu').removeClass('active');
+    }
 
     $(document).on('click touchend', '.fancybox-slide', function (e) {
         if ($(e.target).hasClass('fancybox-slide')) {
             $.fancybox.close();
         }
     });
-
-
 
 
     // input mask
@@ -114,8 +105,45 @@ $(function () {
 
     window.addEventListener('resize', () => getHeaderHeight());
 
+    let lastScrollTop = 0;
 
+    $(window).on('scroll', function () {
+        let currentScroll = $(this).scrollTop();
+        let $header = $('.header');
 
+        if (currentScroll > 0) {
+            $header.addClass('scroll');
+        } else {
+            $header.removeClass('scroll');
+        }
+
+        if (currentScroll > lastScrollTop && currentScroll > 0) {
+            $header.addClass('header-scroll-bottom');
+        } else {
+            $header.removeClass('header-scroll-bottom');
+        }
+
+        lastScrollTop = currentScroll;
+    });
+
+    $(document).on('mouseenter', '.menu__item, .header__projects', function () {
+        if ($("body").hasClass("_pc")) {
+            let $this = $(this);
+            let $submenu = $this.find('.submenu');
+
+            if ($submenu.length > 0) {
+                $('.header').addClass('open-submenu');
+                $this.find('.menu__link, .header__projects-btn').addClass('active');
+                $submenu.addClass('active');
+            }
+        }
+    });
+
+    $(document).on('mouseleave', '.menu__item, .header__projects', function () {
+        if ($("body").hasClass("_pc")) {
+            closeSubmenus();
+        }
+    });
 
     // animation
 

@@ -5,16 +5,8 @@
 .container-lg,
 .container-xl,
 .container-xxl {
-	padding-left: 10px;
-	padding-right: 10px;
-	@media (min-width: $md5) {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-	@media (min-width: $md1) {
-		padding-left: 45px;
-		padding-right: 45px;
-	}
+	padding-left: 16px;
+	padding-right: 16px;
 }
 .container {
 	box-sizing: border-box;
@@ -48,10 +40,10 @@
 }
 .container-xxl {
 	box-sizing: border-box;
+	margin: 0 auto;
 	@media (min-width: $md1) {
 		box-sizing: content-box;
 	}
-	margin: 0 auto;
 }
 
 @media (min-width: $md1) {

@@ -110,7 +110,7 @@
 }
 
 .color-accent {
-	color: #134e26;
+	color: #163a2d;
 }
 
 .font-weight-semibold {
@@ -125,10 +125,7 @@
 }
 
 .rounded-md {
-	border-radius: 25px !important;
-	@media (min-width: $md1) {
-		border-radius: 30px !important;
-	}
+	border-radius: 40px !important;
 }
 
 .rounded-sm {

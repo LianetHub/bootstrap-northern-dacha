@@ -37,7 +37,8 @@ $md6: 379.98px;
 
 $header: var(--header-height, 175px);
 
-$text: #33302a;
+$text: #000;
+$green: #163a2d;
 $light: #efe9e5;
 $grey: #acacac;
 $accent: #c68a23;
@@ -51,7 +52,7 @@ body {
 	color: $text;
 	min-width: 320px;
 	line-height: normal;
-
+	background: #fbf8f6;
 	&.lock {
 		overflow: hidden;
 	}
