@@ -5,8 +5,8 @@
 @import "mixins";
 
 // ======================================МИКСИНЫ==============================================
-// @import "../../node_modules/bootstrap/scss/bootstrap";
-// @import "reset";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "reset";
 // ======================================ШРИФТЫ===============================================
 
 // &display=swap&subset=cyrillic-ext
@@ -18,18 +18,16 @@
 // ======================================ИКОНОЧНЫЙ ШРИФТ======================================
 
 // Шрифт по умолчанию
-$fontfamily: "VelaSans";
+$fontfamily: "Onest";
 $font-manrope: "Manrope";
 // Шрифт по умолчанию
 
 // ПЕРЕМЕННЫЕ
-$minWidth: 320; // Минимальная ширина страницы
-$maxWidth: 1920; // Ширина макета
-$maxWidthContainer: 1170; // Максимальная ширина ограничивающего контейнера
+$minWidth: 320;
+$maxWidth: 1920;
 $containerPadding: 30;
 
-$md-xxl: 1900px;
-$md0: 1599.98px;
+$md0: 1649.98px;
 $md1: 1399.98px;
 $md2: 1199.98px;
 $md3: 991.98px;
@@ -100,47 +98,11 @@ body {
 //=======================================
 
 // =======================ОСНОВНОЙ БЛОК==================
+
 .page {
 	flex: 1 1 auto;
 	overflow-x: clip;
 	z-index: 2;
-	background: url("@img/bg.png") 0 0 / cover repeat-y, #f0efe9;
-	background-attachment: fixed;
-	@media (min-width: $md2) {
-		margin-bottom: 750px;
-	}
-	@media (min-width: $md1) {
-		margin-bottom: 742px;
-	}
-	@media (min-width: $md0) {
-		margin-bottom: 648px;
-	}
-	@media (min-width: $md-xxl) {
-		margin-bottom: 616px;
-	}
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-		width: 100%;
-		transition: opacity 0.3s ease;
-		background: #fff;
-		opacity: 0;
-		@media (min-width: $md2) {
-			bottom: 750px;
-		}
-		@media (min-width: $md1) {
-			bottom: 742px;
-		}
-		@media (min-width: $md0) {
-			bottom: 648px;
-		}
-		@media (min-width: $md-xxl) {
-			bottom: 616px;
-		}
-	}
 }
 
 // =======================ОСНОВНОЙ БЛОК===================

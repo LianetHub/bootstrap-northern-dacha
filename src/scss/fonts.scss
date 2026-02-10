@@ -1,63 +1,27 @@
 @font-face {
-                            font-family: 'icons';
-                            font-display: swap;
-                            src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-                            font-weight: 400;
-                            font-style: normal;
-                        }
+								font-family: 'Manrope';
+								src: url("../fonts/Manrope-VariableFont_wght.woff2") format("woff2 supports variations"),
+									url("../fonts/Manrope-VariableFont_wght.woff2") format("woff2-variations"),
+									url("../fonts/Manrope-VariableFont_wght.woff") format("woff");
+								font-weight: 100 900;
+								font-stretch: 75% 125%;
+								font-style: normal;
+								font-display: swap;
+							}
 @font-face {
-                            font-family: 'Manrope';
-                            font-display: swap;
-                            src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
-                            font-weight: 500;
-                            font-style: normal;
-                        }
+								font-family: 'icons';
+								font-display: swap;
+								src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+								font-weight: 400;
+								font-style: normal;
+							}
 @font-face {
-                            font-family: 'Manrope';
-                            font-display: swap;
-                            src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
-                            font-weight: 600;
-                            font-style: normal;
-                        }
-@font-face {
-                            font-family: 'VelaSans';
-                            font-display: swap;
-                            src: url("../fonts/VelaSans-Bold.woff2") format("woff2"), url("../fonts/VelaSans-Bold.woff") format("woff");
-                            font-weight: 700;
-                            font-style: normal;
-                        }
-@font-face {
-                            font-family: 'Manrope';
-                            font-display: swap;
-                            src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
-                            font-weight: 400;
-                            font-style: normal;
-                        }
-@font-face {
-                            font-family: 'VelaSans';
-                            font-display: swap;
-                            src: url("../fonts/VelaSans-ExtraBold.woff2") format("woff2"), url("../fonts/VelaSans-ExtraBold.woff") format("woff");
-                            font-weight: 800;
-                            font-style: normal;
-                        }
-@font-face {
-                            font-family: 'VelaSans';
-                            font-display: swap;
-                            src: url("../fonts/VelaSans-Regular.woff2") format("woff2"), url("../fonts/VelaSans-Regular.woff") format("woff");
-                            font-weight: 400;
-                            font-style: normal;
-                        }
-@font-face {
-                            font-family: 'VelaSans';
-                            font-display: swap;
-                            src: url("../fonts/VelaSans-Medium.woff2") format("woff2"), url("../fonts/VelaSans-Medium.woff") format("woff");
-                            font-weight: 500;
-                            font-style: normal;
-                        }
-@font-face {
-                            font-family: 'VelaSans';
-                            font-display: swap;
-                            src: url("../fonts/VelaSans-SemiBold.woff2") format("woff2"), url("../fonts/VelaSans-SemiBold.woff") format("woff");
-                            font-weight: 600;
-                            font-style: normal;
-                        }
+								font-family: 'Onest';
+								src: url("../fonts/Onest-VariableFont_wght.woff2") format("woff2 supports variations"),
+									url("../fonts/Onest-VariableFont_wght.woff2") format("woff2-variations"),
+									url("../fonts/Onest-VariableFont_wght.woff") format("woff");
+								font-weight: 100 900;
+								font-stretch: 75% 125%;
+								font-style: normal;
+								font-display: swap;
+							}

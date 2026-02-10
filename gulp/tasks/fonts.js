@@ -69,34 +69,73 @@ export const fontsStyle = () => {
             let newFileOnly;
 
             for (let i = 0; i < fontsFiles.length; i++) {
-                let fontFileName = fontsFiles[i].split(".")[0];
+                // Получаем имя файла без расширения
+                let fontFileNameWithExtension = fontsFiles[i].split(".")[0];
+                let fontFileName = fontFileNameWithExtension;
+
+                // Проверка на вариативный шрифт
+                const isVariableFont = fontFileName.toLowerCase().includes("variablefont_");
+
+                if (isVariableFont) {
+                    fontFileName = fontFileName.replace(/-VariableFont_wght/i, "");
+                }
+
                 if (newFileOnly !== fontFileName) {
                     let fontName = fontFileName.split("-")[0] ? fontFileName.split("-")[0] : fontFileName;
-                    let fontWeight = fontFileName.split("-")[1] ? fontFileName.split("-")[1] : fontFileName;
+                    let fontWeight = fontFileName.split("-")[1] || '';
+                    let fontStyle = 'normal';
 
-                    switch (fontWeight.toLowerCase()) {
-                        case "thin": fontWeight = 100; break;
-                        case "extralight": fontWeight = 200; break;
-                        case "light": fontWeight = 300; break;
-                        case "book": fontWeight = 400; break;
-                        case "medium": fontWeight = 500; break;
-                        case "semibold":
-                        case "demi": fontWeight = 600; break;
-                        case "bold": fontWeight = 700; break;
-                        case "extrabold":
-                        case "heavy": fontWeight = 800; break;
-                        case "black": fontWeight = 900; break;
-                        default: fontWeight = 400; break;
+                    if (!isVariableFont) {
+
+                        // Обработка начертания Italic
+                        if (fontWeight.toLowerCase().includes("italic")) {
+                            fontStyle = "italic";
+                            fontWeight = fontWeight.replace(/italic/i, "").trim();
+                        }
+
+                        // Определение веса шрифта
+                        switch (fontWeight.toLowerCase()) {
+                            case "thin": fontWeight = 100; break;
+                            case "extralight": fontWeight = 200; break;
+                            case "light": fontWeight = 300; break;
+                            case "book": fontWeight = 450; break;
+                            case "medium": fontWeight = 500; break;
+                            case "semibold":
+                            case "demi": fontWeight = 600; break;
+                            case "bold": fontWeight = 700; break;
+                            case "extrabold":
+                            case "heavy": fontWeight = 800; break;
+                            case "black": fontWeight = 900; break;
+                            default: fontWeight = 400; break;
+                        }
                     }
 
-                    fs.appendFile(fontsFile,
-                        `@font-face {
-                            font-family: '${fontName}';
-                            font-display: swap;
-                            src: url("../fonts/${fontFileName}.woff2") format("woff2"), url("../fonts/${fontFileName}.woff") format("woff");
-                            font-weight: ${fontWeight};
-                            font-style: normal;
-                        }\r\n`, cb);
+
+                    if (isVariableFont) {
+                        // Генерация для Вариативных шрифтов
+                        fs.appendFile(fontsFile,
+                            `@font-face {
+								font-family: '${fontName}';
+								src: url("../fonts/${fontFileNameWithExtension}.woff2") format("woff2 supports variations"),
+									url("../fonts/${fontFileNameWithExtension}.woff2") format("woff2-variations"),
+									url("../fonts/${fontFileNameWithExtension}.woff") format("woff");
+								font-weight: 100 900;
+								font-stretch: 75% 125%;
+								font-style: normal;
+								font-display: swap;
+							}\r\n`, cb);
+                    } else {
+                        // Генерация для Обычных шрифтов
+                        fs.appendFile(fontsFile,
+                            `@font-face {
+								font-family: '${fontName}';
+								font-display: swap;
+								src: url("../fonts/${fontFileNameWithExtension}.woff2") format("woff2"), url("../fonts/${fontFileNameWithExtension}.woff") format("woff");
+								font-weight: ${fontWeight};
+								font-style: ${fontStyle};
+							}\r\n`, cb);
+                    }
+
                     newFileOnly = fontFileName;
                 }
             }
