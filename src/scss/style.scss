@@ -63,16 +63,6 @@ body {
 	}
 	&._touch {
 	}
-	&.scrolled-half {
-		.page {
-			&::before {
-				opacity: 1;
-			}
-			.benefits__card {
-				background: #f0efe9;
-			}
-		}
-	}
 }
 // ==================ОБОЛОЧКА==============================
 .wrapper {
@@ -110,3 +100,4 @@ body {
 
 @import "pages/home";
 @import "pages/project";
+@import "pages/order";

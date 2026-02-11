@@ -21,70 +21,46 @@
                         </div>
                     </div>
                 </section>
-                <section class="popular-projects py-5">
+                <section class="popular-projects">
                     <div class="container">
-                        <h2 class="text-center mb-4 font-weight-bold">Популярные проекты домов и бань</h2>
+                        <h2 class="text-center font-weight-medium title color-accent">Популярные проекты домов и бань</h2>
 
-                        <ul class="nav nav-tabs justify-content-center border-0 mb-5" id="projectTabs" role="tablist">
+                        <ul class="nav nav-tabs justify-content-center">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#all">Все</a>
+                                <a class="nav-link active" href="#all">Все</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#timber">Дома из бруса</a>
+                                <a class="nav-link" href="#timber">Дома из бруса</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#frame">Каркасные дома</a>
+                                <a class="nav-link" href="#frame">Каркасные дома</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#banya">Бани из бруса</a>
+                                <a class="nav-link" href="#banya">Бани из бруса</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#frame-banya">Каркасные бани</a>
+                                <a class="nav-link" href="#frame-banya">Каркасные бани</a>
                             </li>
                         </ul>
 
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="all">
-                                <div class="row">
-                                    <div class="col-md-4 mb-4">
-                                        <div class="card border-0">
-                                            <img src="path-to-image.jpg" class="card-img-top rounded-0" alt="Проект дома">
-                                            <div class="card-body px-0 d-flex justify-content-between align-items-center">
-                                                <h5 class="card-title mb-0 font-weight-bold">ДБ — 12</h5>
-                                                <small class="text-muted">87.5 м² • 2.400 000 млн ₽ • 32 дня</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-4">
-                                        <a href="#" class="text-decoration-none h-100">
-                                            <div class="card border-0 h-100 bg-dark-green text-white d-flex align-items-center justify-content-center">
-                                                <div class="text-center">
-                                                    <i class="fas fa-th-large fa-3x mb-3"></i>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-between mt-2 text-dark">
-                                                <span class="font-weight-bold">Смотреть все проекты</span>
-                                                <span>↗</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row">
+                            @@loop('./html/templates/_project-card.html', './html/json/projects.json')
                         </div>
                     </div>
                 </section>
-                <section class="features py-5">
-                    <div class="container text-center">
-                        <h2 class="features__title mb-3">Почему с нами <span>спокойно</span></h2>
-                        <p class="features__subtitle mb-5 text-muted mx-auto" style="max-width: 600px;">
+                <section class="features">
+                    <div class="container">
+                        <h2 class="features__title title text-center">Почему с нами <span class="underline-decor color-accent">спокойно</span></h2>
+                        <p class="features__subtitle mt-5 mx-auto text-center">
                             Мы выстраиваем процесс так, чтобы строительство было понятным, предсказуемым и без лишнего стресса
                         </p>
-                        <div class="row no-gutters border">
-                            <div class="col-md-4 border-right border-bottom p-5 text-left feature-item">
-                                <span class="feature-item__num text-muted small">01</span>
-                                <h4 class="h6 font-weight-bold mt-4">Фиксированная цена в договоре</h4>
-                                <p class="text-muted small mb-0">Стоимость не меняется в процессе строительства</p>
+                        <div class="features__body mt-5">
+                            <div class="row">
+                                <div class="col-md-4 border-right border-bottom p-5 text-left feature-item">
+                                    <span class="feature-item__num text-muted small">01</span>
+                                    <h4 class="h6 font-weight-bold mt-4">Фиксированная цена в договоре</h4>
+                                    <p class="text-muted small mb-0">Стоимость не меняется в процессе строительства</p>
+                                </div>
                             </div>
                         </div>
                     </div>

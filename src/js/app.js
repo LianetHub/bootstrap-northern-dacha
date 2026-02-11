@@ -145,12 +145,84 @@ $(function () {
         }
     });
 
+
+    // order calc
+    function formatPrice(number) {
+        return number.toLocaleString('ru-RU') + ' ₽';
+    }
+
+    function updateOrder() {
+        let totalPrice = 0;
+
+        let complectInput = $('input[name="complect"]:checked');
+        $('#total-complect').text(complectInput.data('name'));
+        totalPrice += parseFloat(complectInput.data('price') || 0);
+
+        let foundationInput = $('input[name="foundation"]:checked');
+        $('#total-foundation').text(foundationInput.data('name'));
+        totalPrice += parseFloat(foundationInput.data('price') || 0);
+
+        let roofInput = $('input[name="roof"]:checked');
+        $('#total-roof').text(roofInput.data('name'));
+        totalPrice += parseFloat(roofInput.data('price') || 0);
+
+        let selectedExtras = [];
+        $('input[name="extra"]:checked').each(function () {
+            selectedExtras.push($(this).data('name'));
+            totalPrice += parseFloat($(this).data('price') || 0);
+        });
+
+        if (selectedExtras.length > 0) {
+            $('#total-extra').text(selectedExtras.join(', '));
+        } else {
+            $('#total-extra').text('Не выбрано');
+        }
+
+        $('#final-price').text(formatPrice(totalPrice));
+
+        $('.order__step-input').each(function () {
+            const label = $(this).closest('.order__step-block');
+            const btnText = label.find('.order__step-bottom');
+
+            if ($(this).is(':checked')) {
+                btnText.text('Выбрано');
+                label.addClass('is-selected');
+            } else {
+                btnText.text('Выбрать');
+                label.removeClass('is-selected');
+            }
+        });
+    }
+
+    $('.order__step-input').on('change', function () {
+        updateOrder();
+    });
+
+    updateOrder();
+
     // animation
 
 
     gsap.registerPlugin(ScrollTrigger);
 
+    gsap.registerPlugin(ScrollTrigger);
 
+    const parallaxImages = document.querySelectorAll('.parallax-image img');
+
+    parallaxImages.forEach((image) => {
+        gsap.fromTo(image, {
+            yPercent: 30
+        }, {
+            yPercent: -30,
+            ease: "none",
+            scrollTrigger: {
+                trigger: image.parentElement,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    });
 
 
 

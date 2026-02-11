@@ -23,3 +23,19 @@
 		margin-bottom: -220px;
 	}
 }
+
+.popular-projects {
+	padding: 135px 0 52px;
+}
+
+.features {
+	padding: 55px 0 100px;
+	// .features__title
+	&__title {
+	}
+	// .features__subtitle
+	&__subtitle {
+		max-width: 564px;
+		font-size: 21px;
+	}
+}

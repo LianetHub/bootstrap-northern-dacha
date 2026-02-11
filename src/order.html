@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Северная дача | Главная'
+    })
+
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page">
+                <section class="order">
+                    <div class="container">
+                        <nav aria-label="Хлебные крошки">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#">Главная</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">Дома из бруса</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">Проект дома ДБ — 12</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Оформление заказа
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="order__content">
+                            <div class="row">
+                                <div class="col-xxl-8">
+                                    <h1 class="order__title title">
+                                        Заказать строительство дома
+                                        на основе проекта <span class="color-accent underline-decor">ДБ — 012</span>
+                                    </h1>
+                                </div>
+                                <div class="col-12">
+                                    <div class="order__image parallax-image overflow-hidden">
+                                        <img src="@img/order.jpg" alt="Фото проекта">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="order__steps">
+                                                <div class="order__step">
+                                                    <div class="order__step-title font-weight-medium h4">Комплектация</div>
+                                                    <div class="order__step-body w-100">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" checked name="complect" data-price="3400000" value="holod" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Холодный контур</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">3.4 млн ₽</span>
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">45 дней</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрано</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" name="complect" data-price="3400000" value="teplo" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Тёплый контур</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">3.4 млн ₽</span>
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">41 день</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" name="complect" data-price="3400000" value="key" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Под ключ</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">3.4 млн ₽</span>
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">45 дней</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="order__step">
+                                                    <div class="order__step-title font-weight-medium h4">Фундамент</div>
+                                                    <div class="order__step-body w-100">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" checked name="foundation" data-price="250000" value="vint" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Свайно-винтовой</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">+ 250 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрано</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" name="foundation" data-price="31000" value="zb" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Железобетонные сваи</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">+ 310 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" name="foundation" data-price="0" value="none" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Не нужен</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">0 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="order__step">
+                                                    <div class="order__step-title font-weight-medium h4">Кровля</div>
+                                                    <div class="order__step-body w-100">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" name="roof" data-price="0" value="ruberoid" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Рубероид</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">0 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" name="roof" data-price="400000" value="metal" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Металлочерепица</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">+ 400 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="radio" name="roof" data-price="500000" value="soft" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Мягкая кровля</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">+ 500 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="order__step">
+                                                    <div class="order__step-title font-weight-medium h4">Дополнительно</div>
+                                                    <div class="order__step-body w-100">
+                                                        <div class="row">
+                                                            <div class="col-md-4 mb-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="checkbox" name="extra" data-price="300000" value="double_base" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Основание «Двойная обвязка» из обрезного бруса 150х200</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">300 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="checkbox" name="extra" data-price="450000" value="drying" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Камерная сушка бруса</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">450 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="checkbox" name="extra" data-price="210000" value="casing" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Окосячка дверных и оконных проёмов</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">210 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="checkbox" name="extra" data-price="300000" value="drain" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Водосточная система</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">300 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="checkbox" name="extra" data-price="300000" value="snow" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Снегозадержатели</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">300 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="checkbox" name="extra" data-price="300000" value="antiseptic" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Обработка стен составом Грунт-антисептик</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">300 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="checkbox" name="extra" data-price="250000" value="cabin_winter" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Бытовка для зимнего проживания</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">250 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="order__step-block d-flex flex-column m-0 h-100">
+                                                                    <input type="checkbox" name="extra" data-price="200000" value="cabin_summer" class="order__step-input hidden" hidden>
+                                                                    <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
+                                                                        <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
+                                                                            <span class="order__step-name mb-auto">Бытовка для летнего проживания</span>
+                                                                            <span class="order__step-stats d-flex flex-wrap">
+                                                                                <span class="order__step-stat d-inline-flex align-items-center">200 000 ₽</span>
+                                                                            </span>
+                                                                        </span>
+                                                                        <span class="order__step-bottom icon-arrow d-flex flex-column justify-content-between">Выбрать</span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="order__total card position-sticky">
+                                                <div class="order__total-header">
+                                                    <div class="order__total-title font-weight-medium color-accent h4">Вы выбрали</div>
+                                                    <div class="order__total-list">
+                                                        <div class="order__total-row d-flex justify-content-between align-items-center border-bottom">
+                                                            <div class="order__total-name">Проект дома</div>
+                                                            <div class="order__total-value text-right" id="total-project">ДБ — 012</div>
+                                                        </div>
+                                                        <div class="order__total-row d-flex justify-content-between align-items-center border-bottom">
+                                                            <div class="order__total-name">Комплектация</div>
+                                                            <div class="order__total-value text-right" id="total-complect">Холодный контур</div>
+                                                        </div>
+                                                        <div class="order__total-row d-flex justify-content-between align-items-center border-bottom">
+                                                            <div class="order__total-name">Фундамент</div>
+                                                            <div class="order__total-value text-right" id="total-foundation">Не нужен</div>
+                                                        </div>
+                                                        <div class="order__total-row d-flex justify-content-between align-items-center border-bottom">
+                                                            <div class="order__total-name">Кровля</div>
+                                                            <div class="order__total-value text-right" id="total-roof">Рубероид</div>
+                                                        </div>
+                                                        <div class="order__total-row d-flex justify-content-between align-items-center">
+                                                            <div class="order__total-name">Дополнительно</div>
+                                                            <div class="order__total-value text-right" id="total-extra">Не выбрано</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="order__total-bottom d-flex justify-content-between align-items-center color-accent font-weight-medium h4 m-0">
+                                                    <div class="order__total-text">Итого, ₽</div>
+                                                    <div class="order__total-price text-right text-nowrap" id="final-price">0 ₽</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.html', {})
+        </div>
+        @@include('html/_popup.html', {})
+        @@include('html/_js.html', {})
+    </body>
+</html>
