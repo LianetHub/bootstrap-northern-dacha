@@ -8,10 +8,193 @@
         <div class="wrapper">
             @@include('html/_header.html', {})
             <main class="page">
-                <br><br><br><br>
-                <br><br><br><br>
-                <br><br><br><br>
-                <section class="options"></section>
+                <section class="project">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-8 col-xl-7 order-xl-0 order-1">
+                                <div class="project__image h-100">
+                                    <img src="@img/project.jpg" class="cover-image" alt="Фото проекта">
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-5 ">
+                                <nav aria-label="Хлебные крошки">
+                                    <ul class="breadcrumb bg-transparent p-0">
+                                        <li class="breadcrumb-item d-inline-flex align-items-center">
+                                            <a href="/" class="breadcrumb-link d-inline-flex align-items-center">
+                                                <span>
+                                                    <img src="@img/icons/home.svg" alt="Иконка">
+                                                </span>
+                                                <span>
+                                                    Главная
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item d-inline-flex align-items-center">
+                                            <a href="#" class="breadcrumb-link d-inline-flex align-items-center">Дома из бруса</a>
+                                        </li>
+                                        <li class="breadcrumb-item d-inline-flex align-items-center active" aria-current="page">
+                                            Проект дома
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <h1 class="project__title title">ДБ — 12</h1>
+                                <div class="project__desc">
+                                    <p>Сбалансированное решение для комфортной загородной жизни.</p>
+                                    <p>Простая и понятная архитектура, продуманная планировка и оптимальная площадь делают дом&nbsp;удобным как для постоянного проживания, так и для сезонного отдыха.</p>
+                                </div>
+                                <p class="project__details">Дом выполнен из качественного северного бруса и&nbsp;подходит для строительства в разных регионах.</p>
+                                <div class="project__actions d-flex flex-wrap">
+                                    <span role="button" class="project__action d-flex justify-content-between align-items-center border">
+                                        <span class="project__action-text">Добавить в избранное</span>
+                                        <span class="project__action-icon flex-shrink-0 d-flex justify-content-center align-items-center">
+                                            <img src="@img/icons/heart.svg" alt="Иконка">
+                                        </span>
+                                    </span>
+                                    <span role="button" class="project__action d-flex justify-content-between align-items-center border">
+                                        <span class="project__action-text">Распечатать страницу</span>
+                                        <span class="project__action-icon flex-shrink-0 d-flex justify-content-center align-items-center">
+                                            <img src="@img/icons/doc.svg" alt="Иконка">
+                                        </span>
+                                    </span>
+                                    <span role="button" class="project__action d-flex justify-content-between align-items-center border">
+                                        <span class="project__action-text">Скачать проект в PDF</span>
+                                        <span class="project__action-icon flex-shrink-0 d-flex justify-content-center align-items-center">
+                                            <img src="@img/icons/download.svg" alt="Иконка">
+                                        </span>
+                                    </span>
+                                    <span role="button" class="project__action d-flex justify-content-between align-items-center border">
+                                        <span class="project__action-text">Поделиться проектом</span>
+                                        <span class="project__action-icon flex-shrink-0 d-flex justify-content-center align-items-center">
+                                            <img src="@img/icons/share.svg" alt="Иконка">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="options">
+                    <div class="options__wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xxl-8 offset-xxl-4">
+                                    <h2 class="options__title title">Варианты <br> комплектации дома</h2>
+                                    <p class="options__subtitle">Мы предлагаем несколько вариантов комплектации дома — от базового до&nbsp;полностью готового к проживанию. Комплектации отличаются уровнем готовности дома, составом работ и объёмом выполняемых этапов</p>
+                                </div>
+                                <div class="col-xxl-4 col-md-6">
+                                    <a href="" class="options__card card bg-transparent h-100 m-0">
+                                        <span class="options__card-header d-flex flex-column flex-grow-1">
+                                            <span class="options__card-name mb-auto h4">Холодный контур</span>
+                                            <span class="options__card-desc d-flex flex-column align-items-start">
+                                                <span>Подходит для тех, кто планирует поэтапное строительство или использует дом сезонно.</span>
+                                                <span>В этой комплектации выполняются основные строительные работы без утепления и внутренней отделки</span>
+                                            </span>
+                                            <span class="options__card-stats d-flex flex-wrap h5">
+                                                <span class="options__card-stat d-inline-flex align-items-center">2.2 млн ₽</span>
+                                                <span class="options__card-stat d-inline-flex align-items-center">32 дней</span>
+                                            </span>
+                                        </span>
+                                        <span class="options__card-bottom icon-arrow  d-flex flex-column justify-content-between">Выбрать эту комплектацию</span>
+                                    </a>
+                                </div>
+                                <div class="col-xxl-4 col-md-6">
+                                    <a href="" class="options__card card bg-transparent h-100 m-0">
+                                        <span class="options__card-header d-flex flex-column flex-grow-1">
+                                            <span class="options__card-name mb-auto h4">Тёплый контур</span>
+                                            <span class="options__card-desc d-flex flex-column align-items-start">
+                                                <span>Оптимальный вариант для тех, кто хочет получить тёплый дом, готовый к дальнейшей отделке.</span>
+                                                <span>Включает утепление и все основные работы по контуру здания, а также защищён от холода и осадков</span>
+                                            </span>
+                                            <span class="options__card-stats d-flex flex-wrap h5">
+                                                <span class="options__card-stat d-inline-flex align-items-center">2.8 млн ₽</span>
+                                                <span class="options__card-stat d-inline-flex align-items-center">41 день</span>
+                                            </span>
+                                        </span>
+                                        <span class="options__card-bottom icon-arrow  d-flex flex-column justify-content-between">Выбрать эту комплектацию</span>
+                                    </a>
+                                </div>
+                                <div class="col-xxl-4 col-md-6">
+                                    <a href="" class="options__card card bg-transparent h-100 m-0">
+                                        <span class="options__card-header d-flex flex-column flex-grow-1">
+                                            <span class="options__card-name mb-auto h4">Под ключ</span>
+                                            <span class="options__card-desc d-flex flex-column align-items-start">
+                                                <span>Максимально готовое решение для тех, кто хочет въехать в дом сразу после завершения строительства.</span>
+                                                <span>Мы выполняем полный комплекс работ, включая внутреннюю отделку</span>
+                                            </span>
+                                            <span class="options__card-stats d-flex flex-wrap h5">
+                                                <span class="options__card-stat d-inline-flex align-items-center">3.4 млн ₽</span>
+                                                <span class="options__card-stat d-inline-flex align-items-center">45 дня</span>
+                                            </span>
+                                        </span>
+                                        <span class="options__card-bottom icon-arrow  d-flex flex-column justify-content-between">Выбрать эту комплектацию</span>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="options__info card bg-transparent h-100 m-0">
+                                        <div class="options__info-title h4">Входит в стоимость</div>
+                                        <ul class="options__info-list">
+                                            <li class="options__info-item position-relative icon-plus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Дом из бруса по проекту</div>
+                                                <div class="options__info-desc">Строительство дома в соответствии с утверждённым проектом <br> и&nbsp;выбранной комплектацией</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-plus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Несущие конструкции и кровля</div>
+                                                <div class="options__info-desc">Возведение стен, перекрытий и монтаж кровельной <br> конструкции по&nbsp;технологии строительства</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-plus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Перекрытия и черновые работы</div>
+                                                <div class="options__info-desc">Устройство лаг пола и потолка, монтаж чернового пола</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-plus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Материалы и доставка</div>
+                                                <div class="options__info-desc">Комплектация и доставка строительных материалов на участок <br> (бесплатно до 500 км от Пестово)</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-plus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Контроль и гарантия</div>
+                                                <div class="options__info-desc">Контроль строительства, фотоотчёты по этапам и гарантия по договору</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-plus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Сборка и монтаж дома</div>
+                                                <div class="options__info-desc">Полный цикл строительных работ по сборке дома на участке заказчика</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="options__info card bg-transparent h-100 m-0">
+                                        <div class="options__info-title h4">Не входит в стоимость</div>
+                                        <ul class="options__info-list">
+                                            <li class="options__info-item position-relative icon-minus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Подготовка и выравнивание участка</div>
+                                                <div class="options__info-desc">Расчистка территории, вывоз мусора, <br> планировка участка</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-minus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Подведение инженерных коммуникаций</div>
+                                                <div class="options__info-desc">Электроснабжение, водоснабжение, канализация, <br> газификация, скважины и септики</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-minus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Внутренние инженерные сети и оборудование</div>
+                                                <div class="options__info-desc">Электрика, сантехника, отопительное оборудование и системы вентиляции</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-minus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Отделочные материалы и работы сверх выбранной комплектации</div>
+                                                <div class="options__info-desc">Дополнительные или индивидуальные решения, <br> не предусмотренные проектом</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-minus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Дополнительные строения и элементы участка</div>
+                                                <div class="options__info-desc">Заборы, навесы, хозблоки, бани, гаражи и благоустройство территории</div>
+                                            </li>
+                                            <li class="options__info-item position-relative icon-minus-square d-flex flex-column">
+                                                <div class="options__info-caption font-weight-medium">Изменения проекта по желанию заказчика <br> после утверждения сметы</div>
+                                                <div class="options__info-desc">Корректировки, не зафиксированные в договоре</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section class="cases">
                     <div class="container">
                         <div class="cases__content">
@@ -31,7 +214,7 @@
 
                                 </div>
                                 @@loop('./html/templates/_case-card.html', './html/json/cases-project-2.json')
-                                <div class="col-xxl-4 col-12">
+                                <div class="col-xxl-4 col-md-6 col-12">
                                     <a href="" class="case-card d-flex flex-column">
                                         <span class="case-card__image d-flex justify-content-center align-items-center w-100 overflow-hidden position-relative">
                                             <img src="@img/icons/grid.svg" alt="Иконка">
@@ -50,7 +233,7 @@
                         <h2 class="guarantees__title title text-right">Гарантии и ответственность</h2>
                         <div class="guarantees__content">
                             <div class="row">
-                                <div class="col-xxl-4 col-lg-6">
+                                <div class="col-xxl-4 col-md-6 col-lg-6">
                                     <div class="guarantees__card d-flex flex-column h-100">
                                         <div class="guarantees__card-header card bg-transparent flex-grow-1">
                                             <div class="guarantees__card-title h4">Работаем по договору</div>
@@ -75,7 +258,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xxl-4 col-lg-6">
+                                <div class="col-xxl-4 col-md-6 col-lg-6">
                                     <div class="guarantees__card d-flex flex-column h-100">
                                         <div class="guarantees__card-header card bg-transparent flex-grow-1">
                                             <div class="guarantees__card-title h4">Фиксированная цена</div>
@@ -100,7 +283,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xxl-4 col-lg-6">
+                                <div class="col-xxl-4 col-md-6 col-lg-6">
                                     <div class="guarantees__card d-flex flex-column h-100">
                                         <div class="guarantees__card-header card bg-transparent flex-grow-1">
                                             <div class="guarantees__card-title h4">Гарантия на выполненные работы</div>
@@ -126,7 +309,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xxl-4 col-lg-6">
+                                <div class="col-xxl-4 col-md-6 col-lg-6">
                                     <div class="guarantees__card d-flex flex-column h-100">
                                         <div class="guarantees__card-header card bg-transparent flex-grow-1">
                                             <div class="guarantees__card-title h4">Соблюдение сроков строительства</div>
@@ -152,7 +335,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xxl-4 col-lg-6">
+                                <div class="col-xxl-4 col-md-6 col-lg-6">
                                     <div class="guarantees__card d-flex flex-column h-100">
                                         <div class="guarantees__card-header card bg-transparent flex-grow-1">
                                             <div class="guarantees__card-title h4">Фиксированная цена</div>
@@ -178,7 +361,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xxl-4 col-lg-6">
+                                <div class="col-xxl-4 col-md-6 col-lg-6">
                                     <div class="guarantees__card d-flex flex-column h-100">
                                         <div class="guarantees__card-header card bg-transparent flex-grow-1">
                                             <div class="guarantees__card-title h4">Гарантия на выполненные работы</div>
@@ -300,7 +483,7 @@
                                     </h2>
                                     <p class="cases__subtitle">Без постановочных кадров — только фактические работы и результат</p>
                                 </div>
-                                <div class="col-xxl-4 col-12">
+                                <div class="col-xxl-4 col-md-6 col-12">
                                     <a href="" class="case-card d-flex flex-column">
                                         <span class="case-card__image d-flex justify-content-center align-items-center w-100 overflow-hidden position-relative">
                                             <img src="@img/icons/grid.svg" alt="Иконка">
