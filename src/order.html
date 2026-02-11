@@ -3,7 +3,6 @@
     @@include('html/_head.html', {
     'title': 'Северная дача | Главная'
     })
-
     <body>
         <div class="wrapper">
             @@include('html/_header.html', {})
@@ -11,17 +10,24 @@
                 <section class="order">
                     <div class="container">
                         <nav aria-label="Хлебные крошки">
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="#">Главная</a>
+                            <ul class="breadcrumb bg-transparent p-0">
+                                <li class="breadcrumb-item d-inline-flex align-items-center">
+                                    <a href="/" class="breadcrumb-link d-inline-flex align-items-center">
+                                        <span>
+                                            <img src="@img/icons/home.svg" alt="Иконка">
+                                        </span>
+                                        <span>
+                                            Главная
+                                        </span>
+                                    </a>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a href="#">Дома из бруса</a>
+                                <li class="breadcrumb-item d-inline-flex align-items-center">
+                                    <a href="#" class="breadcrumb-link d-inline-flex align-items-center">Дома из бруса</a>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a href="#">Проект дома ДБ — 12</a>
+                                <li class="breadcrumb-item d-inline-flex align-items-center">
+                                    <a href="#" class="breadcrumb-link d-inline-flex align-items-center">Проект дома ДБ — 12</a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">
+                                <li class="breadcrumb-item d-inline-flex align-items-center active" aria-current="page">
                                     Оформление заказа
                                 </li>
                             </ul>
@@ -197,7 +203,7 @@
                                                     <div class="order__step-title font-weight-medium h4">Дополнительно</div>
                                                     <div class="order__step-body w-100">
                                                         <div class="row">
-                                                            <div class="col-md-4 mb-4">
+                                                            <div class="col-md-4">
                                                                 <label class="order__step-block d-flex flex-column m-0 h-100">
                                                                     <input type="checkbox" name="extra" data-name="Двойная обвязка" data-price="300000" value="double_base" class="order__step-input hidden" hidden>
                                                                     <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
@@ -211,7 +217,7 @@
                                                                     </span>
                                                                 </label>
                                                             </div>
-                                                            <div class="col-md-4 mb-4">
+                                                            <div class="col-md-4">
                                                                 <label class="order__step-block d-flex flex-column m-0 h-100">
                                                                     <input type="checkbox" name="extra" data-name="Камерная сушка бруса" data-price="450000" value="drying" class="order__step-input hidden" hidden>
                                                                     <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
@@ -225,12 +231,12 @@
                                                                     </span>
                                                                 </label>
                                                             </div>
-                                                            <div class="col-md-4 mb-4">
+                                                            <div class="col-md-4">
                                                                 <label class="order__step-block d-flex flex-column m-0 h-100">
                                                                     <input type="checkbox" name="extra" data-name="Окосячка дверных и оконных проёмов" data-price="210000" value="casing" class="order__step-input hidden" hidden>
                                                                     <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
                                                                         <span class="order__step-header h5 d-flex flex-column flex-grow-1 card rounded-0 m-0">
-                                                                            <span class="order__step-name mb-auto">Окосячка дверных и оконных проёмов</span>
+                                                                            <span class="order__step-name mb-auto">Окосячка дверных и&nbsp;оконных проёмов</span>
                                                                             <span class="order__step-stats d-flex flex-wrap">
                                                                                 <span class="order__step-stat d-inline-flex align-items-center">210 000 ₽</span>
                                                                             </span>
@@ -239,7 +245,7 @@
                                                                     </span>
                                                                 </label>
                                                             </div>
-                                                            <div class="col-md-4 mb-4">
+                                                            <div class="col-md-4">
                                                                 <label class="order__step-block d-flex flex-column m-0 h-100">
                                                                     <input type="checkbox" name="extra" data-name="Водосточная система" data-price="300000" value="drain" class="order__step-input hidden" hidden>
                                                                     <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
@@ -253,7 +259,7 @@
                                                                     </span>
                                                                 </label>
                                                             </div>
-                                                            <div class="col-md-4 mb-4">
+                                                            <div class="col-md-4">
                                                                 <label class="order__step-block d-flex flex-column m-0 h-100">
                                                                     <input type="checkbox" name="extra" data-name="Снегозадержатели" data-price="300000" value="snow" class="order__step-input hidden" hidden>
                                                                     <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
@@ -267,7 +273,7 @@
                                                                     </span>
                                                                 </label>
                                                             </div>
-                                                            <div class="col-md-4 mb-4">
+                                                            <div class="col-md-4">
                                                                 <label class="order__step-block d-flex flex-column m-0 h-100">
                                                                     <input type="checkbox" name="extra" data-name="Обработка стен" data-price="300000" value="antiseptic" class="order__step-input hidden" hidden>
                                                                     <span class="order__step-card d-flex flex-column bg-white w-100 flex-grow-1">
@@ -353,6 +359,7 @@
                         </div>
                     </div>
                 </section>
+                @@include('./html/_information.html')
             </main>
             @@include('html/_footer.html', {})
         </div>

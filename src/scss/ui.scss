@@ -50,13 +50,17 @@
 }
 
 .title-sm {
-	line-height: 110%;
+	line-height: 120%;
 	font-size: 20px;
-	@media (min-width: $md2) {
+	font-weight: 500;
+	@media (min-width: $md4) {
 		font-size: 30px;
 	}
-	@media (min-width: $md0) {
+	@media (min-width: $md2) {
 		font-size: 36px;
+	}
+	@media (min-width: $md0) {
+		font-size: 42px;
 	}
 }
 
@@ -218,6 +222,33 @@
 		&::before {
 			// @extend %ic, .icon-arrow-left;
 		}
+	}
+}
+
+.breadcrumb {
+	font-family: Arial;
+	color: #656363;
+	&-item {
+		&.active {
+			color: #000;
+		}
+		& + .breadcrumb-item {
+			padding-left: 18px;
+
+			&::before {
+				margin-right: 18px;
+				padding-right: 0;
+				content: "";
+				width: 5px;
+				height: 5px;
+				background: currentColor;
+				border-radius: 50%;
+				display: block;
+			}
+		}
+	}
+	&-link {
+		gap: 18px;
 	}
 }
 

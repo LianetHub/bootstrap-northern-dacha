@@ -101,3 +101,30 @@ body {
 @import "pages/home";
 @import "pages/project";
 @import "pages/order";
+
+.infromation-block {
+	padding: 110px 0;
+	// .infromation-block__link
+	&__link {
+		gap: 29px;
+		font-family: Arial;
+	}
+	// .infromation-block__icon
+	&__icon {
+	}
+	// .infromation-block__text
+	&__text {
+		color: #000;
+		font-size: 24px;
+		line-height: 91.667%;
+		text-decoration-line: underline;
+		text-decoration-style: solid;
+		text-decoration-color: #d0d0d0;
+		text-underline-offset: 25%;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
