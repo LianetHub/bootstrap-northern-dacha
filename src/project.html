@@ -8,7 +8,45 @@
         <div class="wrapper">
             @@include('html/_header.html', {})
             <main class="page">
-               
+                <section class="feedback">
+                    <div class="container">
+                        <div class="feedback__body">
+                            <div class="row">
+                                <div class="col-xxl-5 col-xl-6">
+                                    <div class="feedback__form form d-flex flex-column h-100 pr-0">
+                                        <h2 class="form__title title color-accent">
+                                            Хотите построить этот дом?
+                                        </h2>
+                                        <p class="form__subtitle">
+                                            Мы рассчитаем стоимость строительства
+                                            этого проекта, подберём комплектацию
+                                            и&nbsp;зафиксируем цену в договоре.
+                                        </p>
+                                        <div class="form__subtitle d-flex align-items-center">
+                                            <div class="form__subtitle-icon flex-shrink-0">
+                                                <img src="@img/icons/wallet.svg" alt="Иконка">
+                                            </div>
+                                            <div>
+                                                Вы будете понимать, за что платите и каким будет результат — без скрытых условий и доплат
+                                            </div>
+                                        </div>
+                                        <div class="form__content mt-auto">
+                                            <a href="#callback" data-fancybox class="form__submit d-flex flex-column icon-arrow">
+                                                <span class="form__submit-name color-accent">Выбрать комплектацию дома</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-7 col-xl-6">
+                                    <div class="feedback__image h-100">
+                                        <img src="@img/feedback.jpg" class="cover-image" alt="Фото рассчета стоимости">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_information.html')
             </main>
             @@include('html/_footer.html', {})
         </div>

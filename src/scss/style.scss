@@ -207,3 +207,75 @@ body {
 		}
 	}
 }
+
+.project-card {
+	@media (any-hover: hover) {
+		&:hover {
+			.project-card__image img {
+				transform: scale(1.015);
+			}
+			.project-card__bottom {
+				&::before {
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+	// .project-card__image
+	&__image {
+		aspect-ratio: math.div(500, 329);
+
+		background:
+			url("@img/substrate.svg") -50% -47px / 657px auto no-repeat,
+			#224737;
+		& img {
+			inset: 0;
+			transition: transform 0.3s ease;
+		}
+	}
+	// .project-card__bottom
+	&__bottom {
+		padding: 27px 0 0;
+		gap: 16px;
+		&::before {
+			order: 1;
+			width: 24px;
+			height: 24px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: transform 0.3s ease;
+		}
+	}
+	// .project-card__name
+	&__name {
+		color: #000;
+		font-size: 21px;
+		line-height: 152.381%;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	// .project-card__stats
+	&__stats {
+		color: #656363;
+		font-size: 16px;
+		gap: 20px;
+		row-gap: 5px;
+	}
+	// .project-card__stat
+	&__stat {
+		gap: 10px;
+		&:not(:first-child) {
+			&::before {
+				content: "";
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				background: rgba($color: #000000, $alpha: 0.3);
+			}
+		}
+	}
+}

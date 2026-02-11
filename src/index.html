@@ -25,26 +25,38 @@
                     <div class="container">
                         <h2 class="text-center font-weight-medium title color-accent">Популярные проекты домов и бань</h2>
 
-                        <ul class="nav nav-tabs justify-content-center">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#all">Все</a>
+                        <ul class="popular-projects__tags d-flex justify-content-xl-center flex-nowrap">
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-block text-center active" href="">Все</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#timber">Дома из бруса</a>
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-block text-center" href="">Дома из бруса</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#frame">Каркасные дома</a>
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-block text-center" href="">Каркасные дома</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#banya">Бани из бруса</a>
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-block text-center" href="">Бани из бруса</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#frame-banya">Каркасные бани</a>
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-block text-center" href="">Каркасные бани</a>
                             </li>
                         </ul>
 
-                        <div class="row">
-                            @@loop('./html/templates/_project-card.html', './html/json/projects.json')
+                        <div class="popular-projects__content">
+                            <div class="row">
+                                @@loop('./html/templates/_project-card.html', './html/json/projects.json')
+                                <div class="col-xxl-4 col-md-6">
+                                    <a href="" class="project-card d-flex flex-column">
+                                        <span class="project-card__image d-flex justify-content-center align-items-center w-100 overflow-hidden position-relative">
+                                            <img src="@img/icons/grid.svg" alt="Иконка">
+                                        </span>
+                                        <span class="project-card__bottom d-flex justify-content-between align-items-center icon-arrow">
+                                            <span class="project-card__name">Смотреть все проекты</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -65,6 +77,37 @@
                         </div>
                     </div>
                 </section>
+                <section class="feedback">
+                    <div class="container">
+                        <div class="feedback__body">
+                            <div class="row">
+                                <div class="col-xxl-5 col-xl-6">
+                                    <div class="feedback__form form d-flex flex-column h-100">
+                                        <h2 class="form__title title color-accent">
+                                            Остались
+                                            вопросы?
+                                        </h2>
+                                        <p class="form__subtitle">
+                                            Поможем подобрать проект <br>
+                                            и рассчитать вместе с вами
+                                        </p>
+                                        <div class="form__content mt-auto">
+                                            <a href="#callback" data-fancybox class="form__submit d-flex flex-column icon-arrow">
+                                                <span class="form__submit-name color-accent">Получить расчёт стоимости</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-7 col-xl-6">
+                                    <div class="feedback__image h-100">
+                                        <img src="@img/feedback.jpg" class="cover-image" alt="Фото рассчета стоимости">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_information.html')
             </main>
             @@include('html/_footer.html', {})
         </div>
