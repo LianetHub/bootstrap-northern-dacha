@@ -102,10 +102,10 @@ $(function () {
 
     window.addEventListener('resize', () => getHeaderHeight());
 
-    let lastScrollTop = 0;
+    let lastScrollTop = $(window).scrollTop();
 
-    $(window).on('scroll', function () {
-        let currentScroll = $(this).scrollTop();
+    function checkScroll() {
+        let currentScroll = $(window).scrollTop();
         let $header = $('.header');
 
         if (currentScroll > 0) {
@@ -121,6 +121,12 @@ $(function () {
         }
 
         lastScrollTop = currentScroll;
+    }
+
+    checkScroll();
+
+    $(window).on('scroll', function () {
+        checkScroll();
     });
 
     $(document).on('mouseenter', '.menu__item, .header__projects', function () {

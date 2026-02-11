@@ -103,7 +103,10 @@ body {
 @import "pages/order";
 
 .infromation-block {
-	padding: 60px 0 110px;
+	padding: 30px 0 55px;
+	@media (min-width: $md3) {
+		padding: 60px 0 110px;
+	}
 	// .infromation-block__link
 	&__link {
 		gap: 29px;
@@ -115,8 +118,6 @@ body {
 	// .infromation-block__text
 	&__text {
 		color: #000;
-		font-size: 24px;
-
 		text-decoration-line: underline;
 		text-decoration-style: solid;
 		text-decoration-color: #d0d0d0;

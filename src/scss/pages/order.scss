@@ -147,7 +147,10 @@
 	}
 	// .order__total
 	&__total {
-		top: calc($header + 46px);
+		@media (min-width: $md3) {
+			position: sticky;
+			top: calc($header + 46px);
+		}
 	}
 	// .order__total-header
 	&__total-header {
