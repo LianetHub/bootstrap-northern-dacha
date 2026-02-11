@@ -1,9 +1,13 @@
 .footer {
-	background:
-		url("@img/substrate.svg") 22% calc(100% + 88px) / 33.33% auto no-repeat,
-		#224737;
 	color: #fff;
-	padding: 100px 0 50px;
+	background: #224737;
+	padding: 50px 0 25px;
+	@media (min-width: $md4) {
+		padding: 100px 0 50px;
+		background:
+			url("@img/substrate.svg") 22% calc(100% + 88px) / 33.33% auto no-repeat,
+			#224737;
+	}
 
 	// .footer__top
 	&__top {
@@ -18,8 +22,14 @@
 	// .footer__phone
 	&__phone {
 		margin-top: 20px;
-		font-size: 46px;
 		transition: opacity 0.3s ease;
+		font-size: 36px;
+		@media (min-width: $md5) {
+			font-size: 36px;
+		}
+		@media (min-width: $md4) {
+			font-size: 46px;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: #fff;
@@ -31,9 +41,11 @@
 	&__worktime {
 		margin-top: 16px;
 		border: 1px solid rgba($color: #fff, $alpha: 0.1);
-		max-width: 416px;
 		padding: 21px 19px;
 		gap: 18px;
+		@media (min-width: $md4) {
+			max-width: 416px;
+		}
 	}
 	// .footer__worktime-icon
 	&__worktime-icon {
@@ -110,7 +122,10 @@
 		margin-top: 54px;
 		font-size: 15px;
 		gap: 30px;
-		row-gap: 15px;
+		row-gap: 20px;
+		@media (min-width: $md4) {
+			row-gap: 15px;
+		}
 		@media (min-width: $md0) {
 			gap: 80px;
 			row-gap: 30px;
@@ -120,6 +135,7 @@
 	&__policies {
 		gap: 32px;
 		flex: 0 0 100%;
+		row-gap: 8px;
 		@media (min-width: $md1) {
 			flex: 0 1 auto;
 		}
@@ -161,7 +177,10 @@
 	// .footer__prod
 	&__prod {
 		line-height: 120%;
-		gap: 40px;
+		gap: 20px;
+		@media (min-width: 375px) {
+			gap: 40px;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				.footer__prod-text {

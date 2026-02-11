@@ -233,10 +233,13 @@
 			color: #000;
 		}
 		& + .breadcrumb-item {
-			padding-left: 18px;
+			padding-left: 9px;
+			@media (min-width: $md5) {
+				padding-left: 18px;
+			}
 
 			&::before {
-				margin-right: 18px;
+				margin-right: 9px;
 				padding-right: 0;
 				content: "";
 				width: 5px;
@@ -244,11 +247,17 @@
 				background: currentColor;
 				border-radius: 50%;
 				display: block;
+				@media (min-width: $md5) {
+					margin-right: 18px;
+				}
 			}
 		}
 	}
 	&-link {
-		gap: 18px;
+		gap: 9px;
+		@media (min-width: $md5) {
+			gap: 18px;
+		}
 	}
 }
 
