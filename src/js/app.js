@@ -36,6 +36,7 @@ $(function () {
         let $header = $('.header');
         let $body = $('body');
 
+        //  menu actions
         if ($target.closest('.header__menu-toggler').length) {
             $header.toggleClass("open-menu");
             $body.toggleClass("lock-menu");
@@ -51,15 +52,11 @@ $(function () {
             closeSubmenus();
         }
 
+        // accordion
         if ($target.is('.faq__item-btn')) {
             $target.toggleClass('active').next().slideToggle();
         }
-
-        if ($target.is('.popup__tab-btn')) {
-            $target.addClass('active').siblings().removeClass('active');
-            $('.popup__tabs-block').eq($target.index()).addClass('active').siblings().removeClass('active');
-        }
-
+        // open submenu on touch devices
         if ($target.closest('.menu__link, .header__projects-btn').length) {
             let $btn = $target.closest('.menu__link, .header__projects-btn');
             let $submenu = $btn.next('.submenu');
@@ -76,6 +73,11 @@ $(function () {
                 $submenu.addClass('active');
                 $header.addClass('open-submenu');
             }
+        }
+
+        // toggle to fav list
+        if ($target.is('.favorite-btn')) {
+            $target.toggleClass('active');
         }
     });
 

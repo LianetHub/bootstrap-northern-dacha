@@ -219,6 +219,20 @@ body {
 					transform: rotate(45deg);
 				}
 			}
+			.favorite-btn {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	.favorite-btn {
+		@media (any-hover: hover) {
+			opacity: 0;
+			visibility: hidden;
+		}
+		&.active {
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 	// .project-card__image

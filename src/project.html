@@ -83,6 +83,44 @@
                     </div>
                 </section>
                 @@include('./html/_information.html')
+                <section class="cases">
+                    <div class="container">
+                        <div class="cases__content">
+                            <div class="row">
+                                @@loop('./html/templates/_case-card.html', [
+                                {
+                                "index": 5,
+                                "size": "small",
+                                "name": "д. Завидово, Конаковский район, Тверская область"
+                                }])
+                                <div class="col-xxl-8 col-12 order-xxl-0 order-first cases__main">
+                                    <h2 class="cases__title title cases__title--decor">
+                                        <span class="color-accent text-nowrap underline-decor-lg">Похожие проекты</span> <br>
+                                        домов из бруса, <br>
+                                        специльно для вас
+                                    </h2>
+                                    <p class="cases__subtitle">Без постановочных кадров — только фактические работы и результат</p>
+                                </div>
+                                <div class="col-xxl-4 col-12">
+                                    <a href="" class="case-card d-flex flex-column">
+                                        <span class="case-card__image d-flex justify-content-center align-items-center w-100 overflow-hidden position-relative">
+                                            <img src="@img/icons/grid.svg" alt="Иконка">
+                                        </span>
+                                        <span class="case-card__bottom d-flex justify-content-between align-items-center icon-arrow">
+                                            <span class="case-card__name">Смотреть все проекты</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                @@loop('./html/templates/_case-card.html', [
+                                {
+                                "index": 1,
+                                "size": "large",
+                                "name": "д. Искань, Тульская обл., Заокский район"
+                                }])
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
             @@include('html/_footer.html', {})
         </div>
