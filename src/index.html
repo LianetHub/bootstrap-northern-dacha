@@ -27,20 +27,21 @@
 
                         <ul class="popular-projects__tags d-flex justify-content-xl-center flex-nowrap">
                             <li class="popular-projects__tag">
-                                <a class="popular-projects__item d-block text-center active" href="">Все</a>
+                                <a class="popular-projects__item d-flex h-100 text-center active" href="">Все</a>
                             </li>
-                            <li class="popular-projects__tag">
-                                <a class="popular-projects__item d-block text-center" href="">Дома из бруса</a>
+                            <li class="popular-projects_ flex-grow-1_tag">
+                                <a class="popular-projects__item d-flex h-100 text-center" href="">Дома из бруса</a>
                             </li>
-                            <li class="popular-projects__tag">
-                                <a class="popular-projects__item d-block text-center" href="">Каркасные дома</a>
+                            <li class="popular-projects_ flex-grow-1_tag">
+                                <a class="popular-projects__item d-flex h-100 text-center" href="">Каркасные дома</a>
                             </li>
-                            <li class="popular-projects__tag">
-                                <a class="popular-projects__item d-block text-center" href="">Бани из бруса</a>
+                            <li class="popular-projects_ flex-grow-1_tag">
+                                <a class="popular-projects__item d-flex h-100 text-center" href="">Бани из бруса</a>
                             </li>
-                            <li class="popular-projects__tag">
-                                <a class="popular-projects__item d-block text-center" href="">Каркасные бани</a>
+                            <li class="popular-projects_ flex-grow-1_tag">
+                                <a class="popular-projects__item d-flex h-100 text-center" href="">Каркасные бани</a>
                             </li>
+                            flex-grow-1
                         </ul>
 
                         <div class="popular-projects__content">
@@ -138,11 +139,126 @@
                         </div>
                     </div>
                 </section>
+                <section class="calc">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h2 class="calc__title title-xxl color-accent">Выберите проект, который подойдёт именно вам</h2>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="calc__info d-flex flex-column align-items-start">
+                                    <div class="calc__info-icon">
+                                        <img src="@img/icons/info.svg" alt="Иконка">
+                                    </div>
+                                    <div class="calc__info-text">
+                                        Без лишних параметров и сложных
+                                        форм — только то, что действительно
+                                        важно на старте
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="calc__image parallax-image overflow-hidden">
+                                    <img src="@img/calc.jpg" class="cover-image" alt="Фото дома">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="calc__body">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="calc__items">
+                                                <div class="row">
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="building_type" value="timber_house" class="calc__item-input hidden" checked hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Дом из бруса</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="building_type" value="frame_house" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Каркасный дом</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="building_type" value="timber_bath" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Баня из бруса</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="building_type" value="frame_bath" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Каркасная баня</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="area" value="under_100" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">До 100 м²</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="area" value="100_150" class="calc__item-input hidden" checked hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">100 — 150 м²</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="area" value="above_150" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Свыше 150 м²</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="area" value="any" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Площадь не важна</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="floors" value="1" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">1 этаж</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="floors" value="2" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">2 этажа</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="floors" value="1_mansard" class="calc__item-input hidden" hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">1 + мансарда</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-3 col-sm-6">
+                                                        <label class="calc__item d-flex h-100 mb-0">
+                                                            <input type="radio" name="floors" value="any" class="calc__item-input hidden" checked hidden>
+                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Этажность не важна</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <a href="" class="calc__results h-100 d-flex flex-column justify-content-between icon-arrow">
+                                                124 подходящих проекта
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section class="news">
                     <div class="container">
                         <div class="news__header d-flex justify-content-between align-items-end flex-wrap">
                             <h2 class="news__title title">Новости вконтакте</h2>
-                            <a href="" class="news__more">Все новости</a>
+                            <a href="" class="news__more mb-3">Все новости</a>
                         </div>
                         <div class="news__content">
                             <div class="row">
@@ -234,7 +350,7 @@
                             <div class="row">
                                 <div class="col-xxl-5 col-xl-6">
                                     <div class="feedback__form form d-flex flex-column h-100">
-                                        <h2 class="form__title title color-accent">
+                                        <h2 class="form__title title-xxl color-accent">
                                             Остались
                                             вопросы?
                                         </h2>

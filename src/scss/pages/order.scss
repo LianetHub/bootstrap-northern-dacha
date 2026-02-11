@@ -21,26 +21,6 @@
 	}
 	// .order__image
 	&__image {
-		&.parallax-image {
-			position: relative;
-			width: 100%;
-			height: 360px;
-			@media (min-width: $md5) {
-				height: 420px;
-			}
-			@media (min-width: $md2) {
-				height: 520px;
-			}
-			img {
-				width: 100%;
-				height: 160%;
-				object-fit: cover;
-				object-position: center;
-				position: absolute;
-				top: -30%;
-				left: 0;
-			}
-		}
 	}
 	// .order__steps
 	&__steps {
@@ -212,5 +192,26 @@
 	}
 	// .order__total-price
 	&__total-price {
+	}
+}
+
+.parallax-image {
+	position: relative;
+	width: 100%;
+	height: 360px;
+	@media (min-width: $md5) {
+		height: 420px;
+	}
+	@media (min-width: $md2) {
+		height: 520px;
+	}
+	img {
+		width: 100%;
+		height: 160%;
+		object-fit: cover;
+		object-position: center;
+		position: absolute;
+		top: -30%;
+		left: 0;
 	}
 }

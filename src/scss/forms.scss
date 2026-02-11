@@ -73,8 +73,10 @@
 	// .form__title
 	&__title {
 		@media (min-width: $md2) {
-			font-size: 56px;
-			line-height: 85%;
+			&.title {
+				font-size: 56px;
+				line-height: 85%;
+			}
 		}
 	}
 	// .form__subtitle
