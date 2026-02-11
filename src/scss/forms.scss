@@ -1,6 +1,8 @@
 .form {
-	padding: 40px 88px 0;
-
+	padding: 40px 0 0 44px;
+	@media (min-width: $md0) {
+		padding: 40px 88px 0;
+	}
 	&-control {
 		border: 0;
 		border-radius: 0;
@@ -86,7 +88,7 @@
 	}
 	// .form__submit
 	&__submit {
-		margin-left: -88px;
+		margin-left: -44px;
 		margin-top: 40px;
 		border-radius: 10px 0;
 		border: 1px solid rgba($color: #224737, $alpha: 0.1);
@@ -101,6 +103,9 @@
 			justify-content: center;
 			align-items: center;
 			transition: transform 0.3s ease;
+		}
+		@media (min-width: $md0) {
+			margin-left: -88px;
 		}
 		@media (any-hover: hover) {
 			&:hover {

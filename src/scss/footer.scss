@@ -1,6 +1,6 @@
 .footer {
 	background:
-		url("@img/substrate.svg") 22% 88px / 33.33% auto no-repeat,
+		url("@img/substrate.svg") 22% calc(100% + 88px) / 33.33% auto no-repeat,
 		#224737;
 	color: #fff;
 	padding: 100px 0 50px;
@@ -109,7 +109,10 @@
 	&__bottom {
 		margin-top: 54px;
 		font-size: 15px;
-		gap: 80px;
+		gap: 30px;
+		@media (min-width: $md0) {
+			gap: 80px;
+		}
 	}
 	// .footer__policies
 	&__policies {

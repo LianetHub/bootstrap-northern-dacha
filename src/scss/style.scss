@@ -142,7 +142,9 @@ body {
 	}
 	// .feedback__image
 	&__image {
-		margin-left: 50px;
+		@media (min-width: $md0) {
+			margin-left: 50px;
+		}
 		& img {
 			border-radius: 20px;
 		}
