@@ -1,5 +1,10 @@
 .fancybox-bg {
-	background: rgba($color: #134e26, $alpha: 0.9);
+	background: rgba($color: #000, $alpha: 0.5);
+}
+
+.fancybox-container {
+	backdrop-filter: blur(7.5px);
+	-wekbit-backdrop-filter: blur(7.5px);
 }
 
 .fancybox__content {
@@ -13,25 +18,20 @@
 }
 
 .fancybox-slide--html .fancybox-close-small {
-	width: 54px;
-	height: 54px;
-	border-radius: 1000px;
-	border: 1px solid rgba(255, 244, 244, 0.1);
-	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(50px);
-	-webkit-backdrop-filter: blur(50px);
-	color: #fff;
-	top: 20px;
-	right: 20px;
-	transition:
-		background-color 0.3s ease,
-		border-color 0.3s ease,
-		color 0.3s ease;
-	@media (any-hover: hover) {
-		&:hover {
-			border: 1px solid rgba(255, 244, 244, 0.5);
-			background: rgba(255, 255, 255, 0.5);
-			color: #000;
+	@media (min-width: $md1) {
+		width: 50px;
+		height: 50px;
+		padding: 0;
+		color: #000;
+		opacity: 1;
+		transition: opacity 0.3s ease;
+		position: absolute;
+		top: 0;
+		right: 0;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
 		}
 	}
 }
@@ -40,20 +40,73 @@
 	display: none;
 	width: 100%;
 	max-width: 560px;
-	&.popup-lg {
-		max-width: 662px;
-	}
-	border-radius: 20px;
 	padding: 0;
+	border-radius: 20px 0 0 0;
+	position: relative;
+	&.popup-large {
+		max-width: 1620px;
+	}
 
 	// .popup__body
 	&__body {
 		padding: 35px 15px;
 		@media (min-width: $md5) {
-			padding: 45px 56px;
+			padding: 50px;
 		}
 	}
 	// .popup__title
 	&__title {
+	}
+	// .popup__body
+	&__body {
+	}
+	// .popup__column
+	&__columns {
+		@media (min-width: $md1) {
+			margin-right: -30px;
+		}
+	}
+	// .popup__column
+	&__column {
+		gap: 30px;
+		@media (min-width: $md1) {
+			padding-right: var(--bs-gutter-x);
+		}
+		&.border-right {
+			@media (max-width: $md1) {
+				border-right: 0 !important;
+			}
+		}
+	}
+	// .popup__caption
+	&__caption {
+	}
+	// .popup__text
+	&__text {
+		line-height: 160%;
+		& ul {
+			margin-top: 10px;
+			li {
+				padding-left: 39px;
+				position: relative;
+				font-weight: 500;
+				&::before {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 0;
+					flex-shrink: 0;
+					font-size: 22px;
+					color: #224737;
+					@extend %ic, .icon-plus-square;
+				}
+				&:not(:last-child) {
+					margin-bottom: 11px;
+				}
+			}
+		}
+	}
+	// .popup__image
+	&__image {
 	}
 }

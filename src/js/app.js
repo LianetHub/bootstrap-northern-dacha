@@ -159,44 +159,44 @@ $(function () {
     }
 
     // tooltip
-    $('[data-tooltip]').on('mouseenter', function () {
-        var $this = $(this);
-        var title = $this.attr('title');
+    // $('[data-tooltip]').on('mouseenter', function () {
+    //     var $this = $(this);
+    //     var title = $this.attr('title');
 
-        $this.data('title', title).removeAttr('title');
+    //     $this.data('title', title).removeAttr('title');
 
-        var $tooltip = $('<div class="tooltip-block"></div>').text(title);
-        $('body').append($tooltip);
+    //     var $tooltip = $('<div class="tooltip-block"></div>').text(title);
+    //     $('body').append($tooltip);
 
-        var offset = $this.offset();
-        var tooltipWidth = $tooltip.outerWidth();
-        var tooltipHeight = $tooltip.outerHeight();
-        var elementWidth = $this.outerWidth();
-        var windowScrollTop = $(window).scrollTop();
+    //     var offset = $this.offset();
+    //     var tooltipWidth = $tooltip.outerWidth();
+    //     var tooltipHeight = $tooltip.outerHeight();
+    //     var elementWidth = $this.outerWidth();
+    //     var windowScrollTop = $(window).scrollTop();
 
-        var top = offset.top - tooltipHeight - 5;
-        var left = offset.left + (elementWidth / 2) - (tooltipWidth / 2);
+    //     var top = offset.top - tooltipHeight - 5;
+    //     var left = offset.left + (elementWidth / 2) - (tooltipWidth / 2);
 
-        if (top < windowScrollTop) {
-            top = offset.top + $this.outerHeight() + 5;
-            $tooltip.addClass('open-bottom');
-        } else {
-            $tooltip.addClass('open-top');
-        }
+    //     if (top < windowScrollTop) {
+    //         top = offset.top + $this.outerHeight() + 5;
+    //         $tooltip.addClass('open-bottom');
+    //     } else {
+    //         $tooltip.addClass('open-top');
+    //     }
 
-        if (left < 0) {
-            left = 0;
-        } else if (left + tooltipWidth > $(window).width()) {
-            left = $(window).width() - tooltipWidth;
-        }
+    //     if (left < 0) {
+    //         left = 0;
+    //     } else if (left + tooltipWidth > $(window).width()) {
+    //         left = $(window).width() - tooltipWidth;
+    //     }
 
-        $tooltip.css({ top: top, left: left });
-    }).on('mouseleave', function () {
-        $('.tooltip-block').remove();
-        var $this = $(this);
-        var title = $this.data('title');
-        $this.attr('title', title);
-    });
+    //     $tooltip.css({ top: top, left: left });
+    // }).on('mouseleave', function () {
+    //     $('.tooltip-block').remove();
+    //     var $this = $(this);
+    //     var title = $this.data('title');
+    //     $this.attr('title', title);
+    // });
 
 
     // order calc
@@ -276,13 +276,6 @@ $(function () {
             }
         });
     });
-
-
-
-
-
-
-
 
 
 });

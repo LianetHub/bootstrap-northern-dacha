@@ -59,6 +59,18 @@
 	// .order__step-title
 	&__step-title {
 	}
+	// .order__step-tooltip
+	&__step-tooltip {
+		position: relative;
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		z-index: 1;
+		& img {
+			position: relative;
+			z-index: 1;
+		}
+	}
 	// .order__step-body
 	&__step-body {
 		margin-top: 30px;
