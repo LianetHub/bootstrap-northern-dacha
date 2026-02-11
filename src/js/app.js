@@ -116,7 +116,7 @@ $(function () {
             $header.removeClass('scroll');
         }
 
-        if (currentScroll > lastScrollTop && currentScroll > 0) {
+        if (currentScroll > lastScrollTop && currentScroll > 200) {
             $header.addClass('header-scroll-bottom');
         } else {
             $header.removeClass('header-scroll-bottom');
@@ -153,13 +153,11 @@ $(function () {
 
 
     // input mask
-
     var phoneInputs = $('input[type="tel"]');
 
     if (phoneInputs.length > 0) {
         $("input[type='tel']").inputmask("+7 (999) 999-9999");
     }
-
 
 
     // order calc
@@ -221,8 +219,7 @@ $(function () {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.registerPlugin(ScrollTrigger);
-
+    // parallax
     const parallaxImages = document.querySelectorAll('.parallax-image img');
 
     parallaxImages.forEach((image) => {
@@ -239,6 +236,42 @@ $(function () {
             }
         });
     });
+
+    // promo block animation
+    const $promoSection = $('.promo');
+    const $promoVideo = $('.promo__video-wrapper');
+    const $promoTitle = $('.promo__title');
+    const $promoBody = $('.promo__body');
+
+    if ($promoSection.length && $promoVideo.length && $promoTitle.length) {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: $promoSection,
+                start: "top top",
+                end: `${$promoSection.outerHeight() / 2} 100px`,
+                scrub: 0.5,
+            }
+        });
+
+        const getMarginValue = () => {
+            return -((window.innerWidth - $promoBody.width()) / 2);
+        };
+
+        tl.to($promoTitle, {
+            opacity: 0,
+            y: `${$promoSection.outerHeight() / 3}px`,
+        }, 0)
+            .fromTo($promoVideo,
+                {
+                    marginLeft: 0,
+                    marginRight: 0,
+                },
+                {
+                    marginLeft: () => getMarginValue(),
+                    marginRight: () => getMarginValue(),
+                }, 0
+            );
+    }
 
 
 });
