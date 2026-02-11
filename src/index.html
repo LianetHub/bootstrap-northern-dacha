@@ -114,6 +114,30 @@
                         </div>
                     </div>
                 </section>
+                <section class="cases">
+                    <div class="container">
+                        <h2 class="cases__title title text-center mx-auto">
+                            Показываем <span class="color-accent text-nowrap underline-decor-lg">реальные работы</span> 
+                            наших бригад и готовые объекты
+                        </h2>
+                        <p class="cases__subtitle text-center">Без постановочных кадров — только фактические работы и результат</p>
+                        <div class="cases__content">
+                            <div class="row">
+                                @@loop('./html/templates/_case-card.html', './html/json/cases.json')
+                                <div class="col-xxl-4 col-12">
+                                    <a href="" class="case-card d-flex flex-column">
+                                        <span class="case-card__image d-flex justify-content-center align-items-center w-100 overflow-hidden position-relative">
+                                            <img src="@img/icons/grid.svg" alt="Иконка">
+                                        </span>
+                                        <span class="case-card__bottom d-flex justify-content-between align-items-center icon-arrow">
+                                            <span class="case-card__name">Смотреть все проекты</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section class="feedback">
                     <div class="container">
                         <div class="feedback__body">
