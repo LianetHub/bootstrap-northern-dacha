@@ -359,6 +359,43 @@
                         </div>
                     </div>
                 </section>
+                <section class="feedback">
+                    <div class="container">
+                        <div class="feedback__body">
+                            <div class="row">
+                                <div class="col-5">
+                                    <div role="form" class="feedback__form form">
+                                        <h2 class="form__title title color-accent">
+                                            Всё готово для&nbsp;оформления заявки
+                                        </h2>
+                                        <div class="form__content">
+                                            <div class="form__body">
+                                                <label class="form__field icon-user">
+                                                    <input type="text" name="name" placeholder="Укажите ваше имя" class="form-control">
+                                                </label>
+                                                <label class="form__field icon-phone-call">
+                                                    <input type="tel" name="phone" placeholder="+7 (___) ___-____" class="form-control">
+                                                </label>
+                                                <label class="form__field icon-chat">
+                                                    <textarea name="message" placeholder="Ваш вопрос" class="form-control"></textarea>
+                                                </label>
+                                            </div>
+                                            <span role="button" class="form__submit d-flex flex-column icon-arrow">
+                                                <span class="form__submit-name color-accent">Отправить заявку</span>
+                                                <span class="form__submit-desc">Нажимая на кнопку, вы соглашаетесь на обработку персональных данных</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <div class="feedback__image h-100">
+                                        <img src="@img/feedback.jpg" class="cover-image" alt="Фото рассчета стоимости">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 @@include('./html/_information.html')
             </main>
             @@include('html/_footer.html', {})

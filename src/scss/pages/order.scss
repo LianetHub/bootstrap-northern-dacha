@@ -1,5 +1,5 @@
 .order {
-	padding: 162px 0;
+	padding: 162px 0 60px;
 	// .order__content
 	&__content {
 		margin-top: 50px;
@@ -58,6 +58,11 @@
 		@media (any-hover: hover) {
 			&:hover {
 				opacity: 0.9;
+				.order__step-bottom {
+					&::before {
+						transform: rotate(45deg);
+					}
+				}
 			}
 		}
 	}
@@ -70,6 +75,9 @@
 						url("@img/substrate-green.svg") 158px -31px / 351px 365px no-repeat,
 						#fff;
 					color: #224737;
+					&::before {
+						transform: none;
+					}
 				}
 			}
 		}
@@ -126,6 +134,7 @@
 		color: #fff;
 		&::before {
 			align-self: flex-end;
+			transition: transform 0.3s ease;
 		}
 	}
 	// .order__total

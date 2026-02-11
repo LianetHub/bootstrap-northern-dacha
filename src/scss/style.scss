@@ -103,7 +103,7 @@ body {
 @import "pages/order";
 
 .infromation-block {
-	padding: 110px 0;
+	padding: 60px 0 110px;
 	// .infromation-block__link
 	&__link {
 		gap: 29px;
@@ -125,6 +125,26 @@ body {
 			&:hover {
 				text-decoration: none;
 			}
+		}
+	}
+}
+
+.feedback {
+	padding: 60px 0;
+	// .feedback__body
+	&__body {
+		border-radius: 20px 0;
+		background: #f1f1f1;
+		padding: 30px;
+	}
+	// .feedback__form
+	&__form {
+	}
+	// .feedback__image
+	&__image {
+		margin-left: 50px;
+		& img {
+			border-radius: 20px;
 		}
 	}
 }

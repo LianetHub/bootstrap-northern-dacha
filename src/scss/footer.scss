@@ -55,6 +55,12 @@
 	}
 	// .footer__menu-category
 	&__menu-category {
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #fff;
+			}
+		}
 	}
 	// .footer__menu-list
 	&__menu-list {
@@ -68,6 +74,12 @@
 	}
 	// .footer__menu-link
 	&__menu-link {
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #fff;
+			}
+		}
 	}
 	// .footer__callback
 	&__callback {
@@ -129,12 +141,25 @@
 		font-size: 26px;
 		height: 52px;
 		border: 1px solid rgba($color: #fff, $alpha: 0.1);
+		transition: all 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				background: #fff;
+				color: #224737;
+			}
+		}
 	}
 	// .footer__prod
 	&__prod {
-		color: rgba($color: #fff, $alpha: 0.7);
 		line-height: 120%;
 		gap: 40px;
+		@media (any-hover: hover) {
+			&:hover {
+				.footer__prod-text {
+					color: #fff;
+				}
+			}
+		}
 	}
 	// .footer__prod-logo
 	&__prod-logo {
@@ -142,5 +167,7 @@
 	// .footer__prod-text
 	&__prod-text {
 		padding-bottom: 6px;
+		color: rgba($color: #fff, $alpha: 0.7);
+		transition: color 0.3s ease;
 	}
 }
