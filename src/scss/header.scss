@@ -5,6 +5,7 @@
 	width: 100%;
 	background: transparent;
 	z-index: 6;
+	transition: transform 0.3s ease;
 	@media (any-hover: hover) {
 		&:hover {
 			&::before {
@@ -69,6 +70,12 @@
 		}
 	}
 	&.open-menu {
+	}
+	&.header-scroll-bottom {
+		transform: translateY(-100%);
+		@media (min-width: $md1) {
+			transform: translateY(calc(-100% - 24px));
+		}
 	}
 	.container-xxl {
 		@media (min-width: 1919px) {
