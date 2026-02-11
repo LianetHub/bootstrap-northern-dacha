@@ -77,6 +77,17 @@
 			line-height: 85%;
 		}
 	}
+	// .form__subtitle
+	&__subtitle {
+		margin-top: 20px;
+		font-size: 21px;
+		gap: 20px;
+		max-width: 450px;
+	}
+
+	&__subtitle-icon {
+		width: 50px;
+	}
 	// .form__content
 	&__content {
 		margin-top: 20px;

@@ -19,8 +19,8 @@
 
 .fancybox-slide--html .fancybox-close-small {
 	@media (min-width: $md1) {
-		width: 50px;
-		height: 50px;
+		width: 35px;
+		height: 35px;
 		padding: 0;
 		color: #000;
 		opacity: 1;
@@ -39,16 +39,14 @@
 .popup {
 	display: none;
 	width: 100%;
-	max-width: 560px;
 	padding: 0;
 	border-radius: 20px 0 0 0;
 	position: relative;
-	&.popup-large {
-		max-width: 1620px;
-	}
-
+	max-width: 1620px;
+	background: transparent;
 	// .popup__body
 	&__body {
+		background: #fff;
 		padding: 35px 15px;
 		@media (min-width: $md5) {
 			padding: 50px;

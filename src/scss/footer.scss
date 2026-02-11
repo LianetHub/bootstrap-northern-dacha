@@ -40,21 +40,8 @@
 	// .footer__worktime
 	&__worktime {
 		margin-top: 16px;
-		border: 1px solid rgba($color: #fff, $alpha: 0.1);
-		padding: 21px 19px;
-		gap: 18px;
-		@media (min-width: $md4) {
-			max-width: 416px;
-		}
 	}
-	// .footer__worktime-icon
-	&__worktime-icon {
-		width: 30px;
-		height: 30px;
-	}
-	// .footer__worktime-text
-	&__worktime-text {
-	}
+
 	// .footer__menu
 	&__menu {
 		font-family: Arial;
@@ -156,24 +143,7 @@
 	// .footer__copyright
 	&__copyright {
 	}
-	// .footer__socials
-	&__socials {
-		gap: 14px;
-	}
-	// .footer__social
-	&__social {
-		width: 52px;
-		font-size: 26px;
-		height: 52px;
-		border: 1px solid rgba($color: #fff, $alpha: 0.1);
-		transition: all 0.3s ease;
-		@media (any-hover: hover) {
-			&:hover {
-				background: #fff;
-				color: #224737;
-			}
-		}
-	}
+
 	// .footer__prod
 	&__prod {
 		line-height: 120%;
@@ -197,5 +167,40 @@
 		padding-bottom: 6px;
 		color: rgba($color: #fff, $alpha: 0.7);
 		transition: color 0.3s ease;
+	}
+}
+
+.socials {
+	gap: 14px;
+	// .socials__item
+	&__item {
+		width: 52px;
+		font-size: 26px;
+		height: 52px;
+		border: 1px solid rgba($color: #fff, $alpha: 0.1);
+		transition: all 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				background: #fff;
+				color: #224737;
+			}
+		}
+	}
+}
+
+.worktime {
+	border: 1px solid rgba($color: #fff, $alpha: 0.1);
+	padding: 21px 19px;
+	gap: 18px;
+	@media (min-width: $md4) {
+		max-width: 416px;
+	}
+	// .worktime__icon
+	&__icon {
+		width: 30px;
+		height: 30px;
+	}
+	// .worktime__text
+	&__text {
 	}
 }
