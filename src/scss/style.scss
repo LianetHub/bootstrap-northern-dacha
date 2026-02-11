@@ -299,6 +299,11 @@ body {
 		@media (min-width: $md0) {
 			height: 487px;
 		}
+		&--small {
+			@media (min-width: $md1) {
+				height: 250px;
+			}
+		}
 		background:
 			url("@img/substrate.svg") -50% -47px / 657px auto no-repeat,
 			#224737;

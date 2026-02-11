@@ -198,15 +198,23 @@
 	}
 	// .cases__content
 	&__content {
-		margin-top: 26px;
 		overflow: hidden;
+		margin-top: 26px;
 		border-top: 1px solid rgba($color: #000, $alpha: 0.1);
-
+		&:first-child {
+			margin-top: 0;
+			border-top: 0;
+			.row {
+				@media (min-width: $md4) {
+					margin-top: -30px;
+				}
+			}
+		}
 		.row {
 			@media (min-width: $md4) {
 				--bs-gutter-x: 0;
 				--bs-gutter-y: 0;
-				margin: 0 -2px !important;
+				margin-inline: -2px !important;
 			}
 			& > * {
 				@media (min-width: $md4) {
