@@ -34,9 +34,17 @@ $(function () {
     $(document).on('click', function (e) {
         let $target = $(e.target);
         let $header = $('.header');
+        let $body = $('body');
 
         if ($target.closest('.header__menu-toggler').length) {
             $header.toggleClass("open-menu");
+            $body.toggleClass("lock-menu");
+        }
+
+        if ($target.hasClass('menu') && !$target.closest('.menu__content').length) {
+            $header.removeClass("open-menu");
+            $body.removeClass("lock-menu");
+            closeSubmenus();
         }
 
         if ($target.is('.header')) {
@@ -81,17 +89,6 @@ $(function () {
             $.fancybox.close();
         }
     });
-
-
-    // input mask
-
-    var phoneInputs = $('input[type="tel"]');
-
-    if (phoneInputs.length > 0) {
-        $("input[type='tel']").inputmask("+7 (999) 999-9999");
-    }
-
-
 
     // header height
 
@@ -144,6 +141,17 @@ $(function () {
             closeSubmenus();
         }
     });
+
+
+
+    // input mask
+
+    var phoneInputs = $('input[type="tel"]');
+
+    if (phoneInputs.length > 0) {
+        $("input[type='tel']").inputmask("+7 (999) 999-9999");
+    }
+
 
 
     // order calc

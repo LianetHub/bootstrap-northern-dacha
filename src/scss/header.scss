@@ -68,6 +68,8 @@
 			visibility: visible;
 		}
 	}
+	&.open-menu {
+	}
 	.container-xxl {
 		@media (min-width: 1919px) {
 			max-width: 1648px;
@@ -91,7 +93,6 @@
 	}
 	// .header__logo
 	&__logo {
-		z-index: 2;
 		width: 100px;
 		@media (min-width: $md3) {
 			width: 145px;
@@ -102,6 +103,7 @@
 			top: calc(50% + 10px);
 			left: 50%;
 			transform: translate(-50%, -50%);
+			z-index: 2;
 		}
 	}
 	// .header__projects
@@ -208,24 +210,61 @@
 }
 
 .menu {
-	@media (min-width: $md1) {
-		gap: 250px;
-	}
-	@media (min-width: $md0) {
-		gap: 290px;
-	}
 	@media (max-width: $md2) {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 320px;
-		background: #fff;
-		display: none;
-		z-index: 5;
-		// transform: translateX(100%);
 		.header.open-menu & {
-			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba($color: #000000, $alpha: 0.3);
+			}
+		}
+	}
+
+	// .menu__content
+	&__content {
+		@media (min-width: $md2) {
+			display: contents;
+		}
+		@media (max-width: $md2) {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 320px;
+			background: #fff;
+			padding: 10px;
+			z-index: 5;
+			overflow-y: auto;
+			overflow-x: hidden;
+			transform: translateX(100%);
+			transition: transform 0.3s ease;
+			.header.open-menu & {
+				transform: none;
+			}
+		}
+	}
+	// .menu__logo
+	&__logo {
+		max-width: 125px;
+		margin-bottom: 24px;
+		margin-left: 10px;
+	}
+	// .menu__lists
+	&__lists {
+		@media (min-width: $md1) {
+			gap: 250px;
+		}
+		@media (min-width: $md0) {
+			gap: 290px;
 		}
 	}
 	// .menu__list
@@ -294,7 +333,7 @@
 	flex-wrap: wrap;
 	justify-content: flex-end;
 	margin-top: 16px;
-	@media (min-width: $md3) {
+	@media (min-width: $md2) {
 		margin-top: 0;
 		position: absolute;
 		z-index: -1;
@@ -302,7 +341,6 @@
 		left: 50%;
 		transform: translate3d(-50%, -100%, 0);
 		right: 0;
-
 		background: #fff;
 		width: 100vw;
 		opacity: 0;
@@ -322,8 +360,12 @@
 	}
 	// .submenu__list
 	&__list {
-		gap: 60px;
-		padding: 30px 0;
+		gap: 12px;
+		padding: 6px 0px 12px 16px;
+		@media (min-width: $md2) {
+			padding: 30px 0;
+			gap: 60px;
+		}
 	}
 	// .submenu__item
 	&__item {
@@ -357,7 +399,7 @@
 	align-items: flex-end;
 	justify-content: center;
 	padding: 0;
-	z-index: 1;
+	z-index: 10;
 	padding: 10px 8px;
 	width: 40px;
 	height: 40px;
