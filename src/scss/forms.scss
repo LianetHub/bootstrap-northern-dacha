@@ -1,5 +1,7 @@
 .form {
-	padding: 40px 0 0 44px;
+	@media (min-width: $md2) {
+		padding: 40px 0 0 44px;
+	}
 	@media (min-width: $md0) {
 		padding: 40px 88px 0;
 	}
@@ -78,7 +80,9 @@
 	// .form__content
 	&__content {
 		margin-top: 20px;
-		max-width: 412px;
+		@media (min-width: $md2) {
+			max-width: 412px;
+		}
 	}
 	// .form__body
 	&__body {
@@ -88,7 +92,6 @@
 	}
 	// .form__submit
 	&__submit {
-		margin-left: -44px;
 		margin-top: 40px;
 		border-radius: 10px 0;
 		border: 1px solid rgba($color: #224737, $alpha: 0.1);
@@ -103,6 +106,9 @@
 			justify-content: center;
 			align-items: center;
 			transition: transform 0.3s ease;
+		}
+		@media (min-width: $md2) {
+			margin-left: -44px;
 		}
 		@media (min-width: $md0) {
 			margin-left: -88px;

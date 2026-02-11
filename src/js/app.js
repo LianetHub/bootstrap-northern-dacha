@@ -98,7 +98,7 @@ $(function () {
     getHeaderHeight();
 
     function getHeaderHeight() {
-        const headerHeight = $('.header').outerHeight();
+        const headerHeight = $('.header').outerHeight() ?? 0;
         $("body").css('--header-height', headerHeight + "px");
         return headerHeight;
     }
@@ -211,9 +211,9 @@ $(function () {
 
     parallaxImages.forEach((image) => {
         gsap.fromTo(image, {
-            yPercent: 30
+            yPercent: -30
         }, {
-            yPercent: -30,
+            yPercent: 30,
             ease: "none",
             scrollTrigger: {
                 trigger: image.parentElement,

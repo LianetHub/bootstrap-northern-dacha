@@ -110,13 +110,19 @@
 		margin-top: 54px;
 		font-size: 15px;
 		gap: 30px;
+		row-gap: 15px;
 		@media (min-width: $md0) {
 			gap: 80px;
+			row-gap: 30px;
 		}
 	}
 	// .footer__policies
 	&__policies {
 		gap: 32px;
+		flex: 0 0 100%;
+		@media (min-width: $md1) {
+			flex: 0 1 auto;
+		}
 	}
 	// .footer__policy
 	&__policy {

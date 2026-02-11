@@ -47,6 +47,9 @@
 }
 
 @media (min-width: $md1) {
+	.order-xxl-0 {
+		order: 0;
+	}
 	.col-xxl {
 		flex: 1 0 0%;
 	}

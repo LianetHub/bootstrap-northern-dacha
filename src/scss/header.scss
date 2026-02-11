@@ -23,11 +23,14 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: calc(100% + 24px);
+		height: 100%;
 		background: #fff;
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity 0.3s ease;
+		@media (min-width: $md1) {
+			height: calc(100% + 24px);
+		}
 	}
 	&::after {
 		content: "";
@@ -74,23 +77,32 @@
 	// .header__body
 	&__body {
 		position: relative;
-		padding: 44px 0 10px;
-		gap: 16px;
 		border-bottom: 1px solid transparent;
 		transition: border-color 0.3s ease;
+		padding: 10px 0;
+		gap: 8px;
+		@media (min-width: $md1) {
+			padding: 44px 0 10px;
+			gap: 16px;
+		}
 		@media (min-width: 1919px) {
 			padding: 44px 16px 10px 0;
 		}
 	}
 	// .header__logo
 	&__logo {
-		width: 145px;
-		height: 50px;
-		position: absolute;
-		top: calc(50% + 10px);
-		left: 50%;
-		transform: translate(-50%, -50%);
 		z-index: 2;
+		width: 100px;
+		@media (min-width: $md3) {
+			width: 145px;
+			height: 50px;
+		}
+		@media (min-width: $md1) {
+			position: absolute;
+			top: calc(50% + 10px);
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 	// .header__projects
 	&__projects {
@@ -196,22 +208,31 @@
 }
 
 .menu {
-	gap: 250px;
+	@media (min-width: $md1) {
+		gap: 250px;
+	}
 	@media (min-width: $md0) {
 		gap: 290px;
 	}
-	@media (max-width: $md3) {
-		position: absolute;
-		top: calc(100% + 12px);
+	@media (max-width: $md2) {
+		position: fixed;
+		top: 0;
 		right: 0;
+		bottom: 0;
+		width: 320px;
+		background: #fff;
 		display: none;
+		z-index: 5;
+		// transform: translateX(100%);
 		.header.open-menu & {
 			display: block;
 		}
 	}
 	// .menu__list
 	&__list {
-		gap: 18px;
+		@media (min-width: $md1) {
+			gap: 18px;
+		}
 		@media (min-width: $md0) {
 			gap: 50px;
 		}
@@ -337,17 +358,15 @@
 	justify-content: center;
 	padding: 0;
 	z-index: 1;
-	padding: 10px;
-	width: 45px;
-	height: 45px;
+	padding: 10px 8px;
+	width: 40px;
+	height: 40px;
+	font-size: 24px;
+	color: #224737;
+	border: 1px solid rgba($color: #224737, $alpha: 0.2);
 	border-radius: 50%;
-	background: #fff;
 
-	@media (max-width: $md5) {
-		zoom: 0.55;
-	}
-
-	@media (min-width: $md3) {
+	@media (min-width: $md2) {
 		display: none;
 	}
 	& span {
