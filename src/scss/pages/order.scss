@@ -155,6 +155,9 @@
 		@media (min-width: $md3) {
 			position: sticky;
 			top: calc($header + 46px);
+			.header-scroll-bottom & {
+				top: 16px;
+			}
 		}
 	}
 	// .order__total-header
@@ -184,6 +187,9 @@
 	}
 	// .order__total-value
 	&__total-value {
+		display: flex;
+		align-items: center;
+		gap: 4px;
 	}
 	// .order__total-bottom
 	&__total-bottom {

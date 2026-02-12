@@ -118,8 +118,10 @@ $(function () {
 
         if (currentScroll > lastScrollTop && currentScroll > 200) {
             $header.addClass('header-scroll-bottom');
+            $('body').addClass('header-scroll-bottom');
         } else {
             $header.removeClass('header-scroll-bottom');
+            $('body').removeClass('header-scroll-bottom');
         }
 
         lastScrollTop = currentScroll;
@@ -165,6 +167,12 @@ $(function () {
         return number.toLocaleString('ru-RU') + ' ₽';
     }
 
+    function getPluralOptions(n) {
+        let forms = ['опция', 'опции', 'опций'];
+        let idx = (n % 10 === 1 && n % 100 !== 11) ? 0 : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);
+        return n + ' ' + forms[idx];
+    }
+
     function updateOrder() {
         let totalPrice = 0;
 
@@ -181,15 +189,30 @@ $(function () {
         totalPrice += parseFloat(roofInput.data('price') || 0);
 
         let selectedExtras = [];
+        let tooltipLines = [];
+
         $('input[name="extra"]:checked').each(function () {
-            selectedExtras.push($(this).data('name'));
-            totalPrice += parseFloat($(this).data('price') || 0);
+            let name = $(this).data('name');
+            let price = parseFloat($(this).data('price') || 0);
+
+            selectedExtras.push(name);
+            tooltipLines.push(name + ' — ' + formatPrice(price));
+            totalPrice += price;
         });
 
+        const $extraContainer = $('#total-extra');
         if (selectedExtras.length > 0) {
-            $('#total-extra').text(selectedExtras.join(', '));
+            let text = 'Выбрано ' + getPluralOptions(selectedExtras.length);
+            let tooltipHtml = tooltipLines.join('<br>');
+
+            $extraContainer.html(
+                text + ' ' +
+                '<span data-tooltip title="' + tooltipHtml + '" class="tooltip-btn">' +
+                '<img src="img/icons/info.svg" alt="Иконка">' +
+                '</span>'
+            );
         } else {
-            $('#total-extra').text('Не выбрано');
+            $extraContainer.text('Не выбрано');
         }
 
         $('#final-price').text(formatPrice(totalPrice));
@@ -252,6 +275,51 @@ $(function () {
                 }
             }
         ]
+    });
+
+
+    // tooltip
+    $(document).on('mouseenter', '[data-tooltip]', function () {
+        var $this = $(this);
+        var title = $this.attr('title');
+
+        if (!title) return;
+
+        $this.data('title', title).removeAttr('title');
+
+        var $tooltip = $('<div class="tooltip-block"></div>').html(title);
+        $('body').append($tooltip);
+
+        var offset = $this.offset();
+        var tooltipWidth = $tooltip.outerWidth();
+        var tooltipHeight = $tooltip.outerHeight();
+        var elementWidth = $this.outerWidth();
+        var windowScrollTop = $(window).scrollTop();
+
+        var top = offset.top - tooltipHeight - 5;
+        var left = offset.left + (elementWidth / 2) - (tooltipWidth / 2);
+
+        if (top < windowScrollTop) {
+            top = offset.top + $this.outerHeight() + 5;
+            $tooltip.addClass('open-bottom');
+        } else {
+            $tooltip.addClass('open-top');
+        }
+
+        if (left < 0) {
+            left = 0;
+        } else if (left + tooltipWidth > $(window).width()) {
+            left = $(window).width() - tooltipWidth;
+        }
+
+        $tooltip.css({ top: top, left: left });
+    }).on('mouseleave', '[data-tooltip]', function () {
+        $('.tooltip-block').remove();
+        var $this = $(this);
+        var title = $this.data('title');
+        if (title) {
+            $this.attr('title', title);
+        }
     });
 
 
