@@ -27,29 +27,29 @@
                     <div class="container">
                         <h2 class="text-center font-weight-medium title color-accent">Популярные проекты домов и бань</h2>
 
-                        <ul class="popular-projects__tags d-flex justify-content-xl-center flex-nowrap">
+                        <ul class="popular-projects__tags d-flex justify-content-xxl-center flex-nowrap">
                             <li class="popular-projects__tag">
-                                <a class="popular-projects__item d-flex h-100 text-center active" href="">Все</a>
+                                <a class="popular-projects__item d-flex h-100 text-center flex-grow-1 justify-content-center active" href="">Все</a>
                             </li>
-                            <li class="popular-projects_ flex-grow-1_tag">
-                                <a class="popular-projects__item d-flex h-100 text-center" href="">Дома из бруса</a>
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-flex h-100 text-center flex-grow-1 justify-content-center" href="">Дома из бруса</a>
                             </li>
-                            <li class="popular-projects_ flex-grow-1_tag">
-                                <a class="popular-projects__item d-flex h-100 text-center" href="">Каркасные дома</a>
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-flex h-100 text-center flex-grow-1 justify-content-center" href="">Каркасные дома</a>
                             </li>
-                            <li class="popular-projects_ flex-grow-1_tag">
-                                <a class="popular-projects__item d-flex h-100 text-center" href="">Бани из бруса</a>
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-flex h-100 text-center flex-grow-1 justify-content-center" href="">Бани из бруса</a>
                             </li>
-                            <li class="popular-projects_ flex-grow-1_tag">
-                                <a class="popular-projects__item d-flex h-100 text-center" href="">Каркасные бани</a>
+                            <li class="popular-projects__tag">
+                                <a class="popular-projects__item d-flex h-100 text-center flex-grow-1 justify-content-center" href="">Каркасные бани</a>
                             </li>
-                            flex-grow-1
+
                         </ul>
 
                         <div class="popular-projects__content">
                             <div class="row">
                                 @@loop('./html/templates/_project-card.html', './html/json/projects.json')
-                                <div class="col-xxl-4 col-md-6">
+                                <div class="col-xxl-4 col-12">
                                     <a href="" class="project-card d-flex flex-column">
                                         <span class="project-card__image d-flex justify-content-center align-items-center w-100 overflow-hidden position-relative">
                                             <img src="@img/icons/grid.svg" alt="Иконка">
@@ -85,30 +85,60 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-6 features__item features__item--bordered d-flex flex-column">
                                     <div class="features__item-info d-flex flex-column h-100">
+                                        <div class="features__item-header d-flex justify-content-between">
+                                            <span class="features__item-num text-muted">02</span>
+                                            <div class="features__item-icon">
+                                                <img src="@img/icons/payment-success.svg" alt="Иконка">
+                                            </div>
+                                        </div>
                                         <h4 class="features__item-title h4 mt-auto">Работаем без&nbsp;предоплатые</h4>
                                         <p class="features__item-desc mb-0">Оплата — по этапам: 70 % после разгрузки материала на участке, 30 % после приёмки работ</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-sm-6 features__item features__item--bordered d-flex flex-column">
                                     <div class="features__item-info d-flex flex-column h-100">
+                                        <div class="features__item-header d-flex justify-content-between">
+                                            <span class="features__item-num text-muted">03</span>
+                                            <div class="features__item-icon">
+                                                <img src="@img/icons/payment-success.svg" alt="Иконка">
+                                            </div>
+                                        </div>
                                         <h4 class="features__item-title h4 mt-auto">Фото и&nbsp;видеоотчёты</h4>
                                         <p class="features__item-desc mb-0">Вы видите каждый этап строительства, <br> даже если не находитесь на объекте</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-sm-6 features__item d-flex flex-column">
                                     <div class="features__item-info d-flex flex-column h-100">
+                                        <div class="features__item-header d-flex justify-content-between">
+                                            <span class="features__item-num text-muted">04</span>
+                                            <div class="features__item-icon">
+                                                <img src="@img/icons/payment-success.svg" alt="Иконка">
+                                            </div>
+                                        </div>
                                         <h4 class="features__item-title h4 mt-auto">Контроль на&nbsp;объекте</h4>
                                         <p class="features__item-desc mb-0">Мы регулярно выезжаем и контролируем качество&nbsp;работ</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-sm-6 features__item d-flex flex-column">
                                     <div class="features__item-info d-flex flex-column h-100">
+                                        <div class="features__item-header d-flex justify-content-between">
+                                            <span class="features__item-num text-muted">05</span>
+                                            <div class="features__item-icon">
+                                                <img src="@img/icons/payment-success.svg" alt="Иконка">
+                                            </div>
+                                        </div>
                                         <h4 class="features__item-title h4 mt-auto">Северный <br> лес</h4>
                                         <p class="features__item-desc mb-0">Используем проверенные материалы от надёжных поставщиков. Работаем с сухим и строганным материалом</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 features__item d-flex flex-column">
                                     <div class="features__item-info d-flex flex-column h-100 pl-lg-0">
+                                        <div class="features__item-header d-flex justify-content-between">
+                                            <span class="features__item-num text-muted">06</span>
+                                            <div class="features__item-icon">
+                                                <img src="@img/icons/payment-success.svg" alt="Иконка">
+                                            </div>
+                                        </div>
                                         <h4 class="features__item-title h4 mt-auto">Гарантия <br> до 3 лет</h4>
                                         <p class="features__item-desc mb-0">Закреплена в договоре и действует <br> после сдачи объекта</p>
                                     </div>
@@ -171,76 +201,40 @@
                                             <div class="calc__items">
                                                 <div class="row">
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="building_type" value="timber_house" class="calc__item-input hidden" checked hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Дом из бруса</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn checked flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Дом из бруса</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="building_type" value="frame_house" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Каркасный дом</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Каркасный дом</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="building_type" value="timber_bath" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Баня из бруса</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Баня из бруса</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="building_type" value="frame_bath" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Каркасная баня</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Каркасная баня</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="area" value="under_100" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">До 100 м²</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">До 100 м²</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="area" value="100_150" class="calc__item-input hidden" checked hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">100 — 150 м²</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">100 — 150 м²</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="area" value="above_150" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Свыше 150 м²</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn checked flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Свыше 150 м²</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="area" value="any" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Площадь не важна</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Площадь не важна</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="floors" value="1" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">1 этаж</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn checked flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">1 этаж</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="floors" value="2" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">2 этажа</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">2 этажа</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="floors" value="1_mansard" class="calc__item-input hidden" hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">1 + мансарда</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">1 + мансарда</a>
                                                     </div>
                                                     <div class="col-xxl-3 col-sm-6">
-                                                        <label class="calc__item d-flex h-100 mb-0">
-                                                            <input type="radio" name="floors" value="any" class="calc__item-input hidden" checked hidden>
-                                                            <span class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Этажность не важна</span>
-                                                        </label>
+                                                        <a href="" class="calc__item-btn flex-grow-1 position-relative w-100 h4 d-flex align-items-center justify-content-between">Этажность не важна</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -263,8 +257,8 @@
                             <a href="" class="news__more mb-3">Все новости</a>
                         </div>
                         <div class="news__content">
-                            <div class="row">
-                                <div class="col-xxl-4 col-lg-6">
+                            <div class="news__slider">
+                                <div class="news__slide">
                                     <div class="news__card card h-100">
                                         <div class="news__card-main d-flex flex-column flex-grow-1">
                                             <time datetime="2026-01-23" class="news__card-time">23.01.2026</time>
@@ -290,7 +284,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-xxl-4 col-lg-6">
+                                <div class="news__slide">
                                     <div class="news__card card h-100">
                                         <div class="news__card-main d-flex flex-column flex-grow-1">
                                             <time datetime="2026-01-23" class="news__card-time">23.01.2026</time>
@@ -316,7 +310,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-xxl-4 col-lg-6">
+                                <div class="news__slide">
                                     <div class="news__card card h-100">
                                         <div class="news__card-main d-flex flex-column flex-grow-1">
                                             <time datetime="2026-01-23" class="news__card-time">23.01.2026</time>
@@ -343,6 +337,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="news__dots"></div>
                         </div>
                     </div>
                 </section>

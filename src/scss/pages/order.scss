@@ -105,7 +105,9 @@
 	// .order__step-header
 	&__step-header {
 		padding: 30px;
-		min-height: 173px;
+		@media (min-width: $md5) {
+			min-height: 173px;
+		}
 	}
 	// .order__step-name
 	&__step-name {
@@ -131,8 +133,6 @@
 	}
 	// .order__step-bottom
 	&__step-bottom {
-		min-height: 163px;
-
 		padding: 30px;
 		font-size: 18px;
 		line-height: math.div(22, 18);
@@ -142,6 +142,9 @@
 			url("@img/substrate.svg") 158px -31px / 351px 365px no-repeat,
 			#224737;
 		color: #fff;
+		@media (min-width: $md5) {
+			min-height: 163px;
+		}
 		&::before {
 			align-self: flex-end;
 			transition: transform 0.3s ease;

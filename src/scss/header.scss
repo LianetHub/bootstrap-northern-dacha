@@ -346,6 +346,20 @@
 			}
 		}
 	}
+	// .menu__bottom
+	&__bottom {
+		gap: 16px;
+		padding-left: 8px;
+	}
+	// .menu__callback
+	&__callback {
+		@extend .header__social;
+		font-size: 18px;
+	}
+	// .menu__social
+	&__social {
+		@extend .header__social;
+	}
 }
 
 .submenu {
