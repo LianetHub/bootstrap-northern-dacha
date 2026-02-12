@@ -40,7 +40,9 @@
 	}
 	// .project__actions
 	&__actions {
-		margin-top: 44px;
+		@media (min-width: $md1) {
+			margin-top: 44px;
+		}
 	}
 	// .project__action
 	&__action {
@@ -138,12 +140,20 @@
 	}
 	// .characteristics__content
 	&__content {
+		@media (max-width: $md1) {
+			border-top: 1px solid rgba($color: #000, $alpha: 0.1);
+			border-left: 1px solid rgba($color: #000, $alpha: 0.1);
+		}
 		.row {
 			--bs-gutter-x: 0;
 			--bs-gutter-y: 0;
 			.col-xxl-3 {
-				border: 1px solid rgba($color: #000, $alpha: 0.1);
+				@media (max-width: $md1) {
+					border-right: 1px solid rgba($color: #000, $alpha: 0.1);
+					border-bottom: 1px solid rgba($color: #000, $alpha: 0.1);
+				}
 				@media (min-width: $md1) {
+					border: 1px solid rgba($color: #000, $alpha: 0.1);
 					border-left: 0;
 					&:nth-child(4n + 4) {
 						border-right: 0;
@@ -152,7 +162,8 @@
 			}
 			.col-xxl-6 {
 				@media (max-width: $md1) {
-					border: 1px solid rgba($color: #000, $alpha: 0.1);
+					border-right: 1px solid rgba($color: #000, $alpha: 0.1);
+					border-bottom: 1px solid rgba($color: #000, $alpha: 0.1);
 				}
 				@media (min-width: $md1) {
 					border-bottom: 1px solid rgba($color: #000, $alpha: 0.1);
@@ -407,40 +418,28 @@
 	}
 	// .faq__content
 	&__content {
-		border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+		border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
 		margin-top: 32px;
 		@media (min-width: $md5) {
 			margin-top: 62px;
 		}
-		@media (min-width: $md3) {
-			border-bottom: 0;
-		}
+
 		.row {
 			--bs-gutter-x: 0;
 			--bs-gutter-y: 0;
-			@media (min-width: $md3) {
-				& > *:first-child {
-					.faq__item {
-						border-right: 1px solid rgba($color: #000000, $alpha: 0.1);
-					}
-				}
-				& > *:last-child {
-					margin-left: -1px;
-					.faq__item {
-						border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
-					}
-				}
+		}
+	}
+	// .faq__column
+	&__column {
+		border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+		@media (min-width: $md3) {
+			&:nth-child(odd) {
+				border-right: 1px solid rgba($color: #000000, $alpha: 0.1);
 			}
 		}
 	}
 	// .faq__item
 	&__item {
-		border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
-		@media (min-width: $md3) {
-			&:last-child {
-				border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
-			}
-		}
 	}
 	// .faq__item-btn
 	&__item-btn {

@@ -313,7 +313,7 @@ body {
 		@media (min-width: $md0) {
 			height: 487px;
 		}
-		&--small {
+		&.case-card__image--small {
 			@media (min-width: $md1) {
 				height: 250px;
 			}
