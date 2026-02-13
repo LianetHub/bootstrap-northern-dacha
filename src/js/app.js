@@ -384,104 +384,110 @@ $(function () {
 
     // promo block animation
     const $promoSection = $('.promo');
-    const $promoSlider = $('.promo__slider');
-    const $promoMedia = $('.promo__media');
-    const $promoTitle = $('.promo__title');
-    const $cursor = $('.promo-cursor');
+const $promoSliderElement = document.querySelector('.promo__slider');
+const $promoMedia = $('.promo__media');
+const $promoTitle = $('.promo__title');
+const $cursor = $('.promo-cursor');
 
-    if ($promoSlider.length) {
-        $promoSlider.slick({
-            arrows: false,
-            dots: false,
-            infinite: true,
-            slidesToShow: 1,
-            adaptiveHeight: true,
-            fade: true,
-            cssEase: 'linear'
-        });
-    }
+let promoSwiper;
 
-    if ($promoSection.length && $promoMedia.length && $promoTitle.length) {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: $promoSection,
-                start: "top top",
-                end: () => `${$promoSection.outerHeight() / 2} 100px`,
-                scrub: 0.5,
-                onUpdate: () => {
-                    if ($promoSlider.length) {
-                        $promoSlider.slick('setPosition');
-                    }
+if ($promoSliderElement) {
+    promoSwiper = new Swiper($promoSliderElement, {
+        loop: true,
+        slidesPerView: 1,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 500,
+        allowTouchMove: true
+    });
+}
+
+if ($promoSection.length && $promoMedia.length && $promoTitle.length) {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: $promoSection,
+            核心: "top top",
+            start: "top top",
+            end: () => `${$promoSection.outerHeight() / 2} 100px`,
+            scrub: 0.5,
+            onUpdate: () => {
+                if (promoSwiper) {
+                    promoSwiper.update();
                 }
             }
+        }
+    });
+
+    tl.to($promoTitle, {
+        opacity: 0,
+        y: () => $promoSection.outerHeight() / 3,
+    }, 0)
+    .fromTo($promoMedia,
+        { maxWidth: 1620 },
+        { maxWidth: "100%" },
+        0
+    );
+
+    window.addEventListener('resize', () => {
+        ScrollTrigger.refresh();
+        if (promoSwiper) {
+            promoSwiper.update();
+        }
+    });
+}
+
+if ($promoMedia.length && $cursor.length) {
+    $promoMedia.on('mousemove', function (e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        gsap.to($cursor, {
+            left: x,
+            top: y,
+            duration: 0.1,
+            ease: "power2.out"
         });
 
-        tl.to($promoTitle, {
+        if (x < rect.width / 2) {
+            $cursor.removeClass('is-right').addClass('is-left');
+        } else {
+            $cursor.removeClass('is-left').addClass('is-right');
+        }
+    });
+
+    $promoMedia.on('mouseenter', function () {
+        $(this).addClass('cursor-active');
+        gsap.to($cursor, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.3
+        });
+    });
+
+    $promoMedia.on('mouseleave', function () {
+        $(this).removeClass('cursor-active');
+        gsap.to($cursor, {
             opacity: 0,
-            y: () => $promoSection.outerHeight() / 3,
-        }, 0)
-            .fromTo($promoMedia,
-                { maxWidth: 1620 },
-                { maxWidth: "100%" },
-                0
-            );
-
-        window.addEventListener('resize', () => {
-            ScrollTrigger.refresh();
-            if ($promoSlider.length) {
-                $promoSlider.slick('setPosition');
-            }
+            scale: 0,
+            duration: 0.3
         });
-    }
+    });
 
-    if ($promoMedia.length && $cursor.length) {
-        $promoMedia.on('mousemove', function (e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    $promoMedia.on('click', function (e) {
+        if (!promoSwiper) return;
 
-            gsap.to($cursor, {
-                left: x,
-                top: y,
-                duration: 0.1,
-                ease: "power2.out"
-            });
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
 
-            if (x < rect.width / 2) {
-                $cursor.removeClass('is-right').addClass('is-left');
-            } else {
-                $cursor.removeClass('is-left').addClass('is-right');
-            }
-        });
-
-        $promoMedia.on('mouseenter', function () {
-            $(this).addClass('cursor-active');
-            gsap.to($cursor, {
-                opacity: 1,
-                scale: 1,
-                duration: 0.3
-            });
-        });
-
-        $promoMedia.on('mouseleave', function () {
-            $(this).removeClass('cursor-active');
-            gsap.to($cursor, {
-                opacity: 0,
-                scale: 0,
-                duration: 0.3
-            });
-        });
-
-        $promoMedia.on('click', function (e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-
-            if (x < rect.width / 2) {
-                $promoSlider.slick('slickPrev');
-            } else {
-                $promoSlider.slick('slickNext');
-            }
-        });
-    }
+        if (x < rect.width / 2) {
+            promoSwiper.slidePrev();
+        } else {
+            promoSwiper.slideNext();
+        }
+    });
+}
 
 });

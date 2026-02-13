@@ -8,25 +8,28 @@
         <div class="wrapper">
             @@include('html/_header.html', {})
             <main class="page">
+               
                 <section class="promo">
                     <div class="container">
                         <div class="promo__body">
                             <h1 class="promo__title title-xxl font-weight-lighter ml-auto mr-auto color-accent">
-                                <span class="font-weight-medium">Загородный дом</span> без стресса,
+                                <span class="font-weight-medium">Загородный дом</span> без стресса,
                                 переплат и&nbsp;скрытых условий
                             </h1>
                         </div>
                     </div>
                     <div class="promo__media">
                         <div class="promo-cursor"></div>
-                        <div class="promo__slider position-relative overflow-hidden rounded-md">
-                            <div class="promo__slide">
-                                <video class="promo__video overflow-hidden" muted loop playsinline autoplay="true" preload="metadata" poster="@img/promo.jpg">
-                                    <source src="./files/promo.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-                                </video>
-                            </div>
-                            <div class="promo__slide">
-                                <img src="@img/promo.jpg" class="cover-image" alt="Постер">
+                        <div class="promo__slider swiper overflow-hidden rounded-md">
+                            <div class="swiper-wrapper">
+                                <div class="promo__slide swiper-slide">
+                                    <video class="promo__video overflow-hidden" muted loop playsinline autoplay="true" preload="metadata" poster="@img/promo.jpg">
+                                        <source src="./files/promo.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+                                    </video>
+                                </div>
+                                <div class="promo__slide swiper-slide">
+                                    <img src="@img/promo.jpg" class="cover-image" alt="Постер">
+                                </div>
                             </div>
                         </div>
                     </div>
