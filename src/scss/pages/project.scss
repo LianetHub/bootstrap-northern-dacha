@@ -99,8 +99,11 @@
 	}
 	// .benefits__card-header
 	&__card-header {
-		min-height: 313px;
 		padding: 20px 31px 25px;
+		min-height: 160px;
+		@media (min-width: $md3) {
+			min-height: 313px;
+		}
 	}
 	// .benefits__card-caption
 	&__card-caption {
@@ -266,7 +269,9 @@
 	// .options__card-header
 	&__card-header {
 		padding: 30px;
-		min-height: 173px;
+		@media (min-width: $md3) {
+			min-height: 173px;
+		}
 	}
 	// .options__card-name
 	&__card-name {
@@ -300,7 +305,6 @@
 	}
 	// .options__card-bottom
 	&__card-bottom {
-		min-height: 193px;
 		padding: 30px;
 		font-size: 21px;
 		line-height: 104.762%;
@@ -310,6 +314,9 @@
 			url("@img/substrate.svg") 158px -31px / 351px 365px no-repeat,
 			#224737;
 		color: #fff;
+		@media (min-width: $md3) {
+			min-height: 193px;
+		}
 		&::before {
 			align-self: flex-end;
 			transition: transform 0.3s ease;

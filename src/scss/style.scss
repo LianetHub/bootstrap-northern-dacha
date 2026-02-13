@@ -5,8 +5,8 @@
 @import "mixins";
 
 // ======================================МИКСИНЫ==============================================
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "reset";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "reset";
 // ======================================ШРИФТЫ===============================================
 
 // &display=swap&subset=cyrillic-ext
@@ -27,7 +27,7 @@ $minWidth: 320;
 $maxWidth: 1920;
 $containerPadding: 30;
 
-$md0: 1649.98px;
+$md0: 1669.98px;
 $md1: 1399.98px;
 $md2: 1199.98px;
 $md3: 991.98px;

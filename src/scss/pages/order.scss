@@ -201,7 +201,37 @@
 	}
 	// .order__total-price
 	&__total-price {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		vertical-align: bottom;
+		min-width: 50%;
 	}
+}
+
+.price-anim-item {
+	display: block;
+	transition:
+		transform 0.2s ease-in-out,
+		opacity 0.2s ease-in-out;
+}
+
+.price-anim-item.new {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+}
+
+#final-price.is-animating .price-anim-item.old {
+	transform: translateY(-100%);
+	opacity: 0;
+}
+
+#final-price.is-animating .price-anim-item.new {
+	transform: translateY(-100%);
+	opacity: 1;
 }
 
 .parallax-image {

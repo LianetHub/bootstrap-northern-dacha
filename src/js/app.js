@@ -173,6 +173,33 @@ $(function () {
         return n + ' ' + forms[idx];
     }
 
+    let lastPrice = 0;
+
+    function animatePrice(newPrice) {
+        const $container = $('#final-price');
+        if (newPrice === lastPrice) return;
+
+        const oldText = formatPrice(lastPrice);
+        const newText = formatPrice(newPrice);
+
+        $container.empty();
+
+        const $oldValue = $('<span class="price-anim-item old">' + oldText + '</span>');
+        const $newValue = $('<span class="price-anim-item new">' + newText + '</span>');
+
+        $container.append($oldValue, $newValue);
+
+        setTimeout(() => {
+            $container.addClass('is-animating');
+        }, 10);
+
+        setTimeout(() => {
+            $container.removeClass('is-animating');
+            $container.text(newText);
+            lastPrice = newPrice;
+        }, 200);
+    }
+
     function updateOrder() {
         let totalPrice = 0;
 
@@ -215,7 +242,7 @@ $(function () {
             $extraContainer.text('Не выбрано');
         }
 
-        $('#final-price').text(formatPrice(totalPrice));
+        animatePrice(totalPrice);
 
         $('.order__step-input').each(function () {
             const label = $(this).closest('.order__step-block');
@@ -235,7 +262,15 @@ $(function () {
         updateOrder();
     });
 
+    let initialPrice = 0;
+    $('input[name="complect"]:checked, input[name="foundation"]:checked, input[name="roof"]:checked, input[name="extra"]:checked').each(function () {
+        initialPrice += parseFloat($(this).data('price') || 0);
+    });
+    lastPrice = initialPrice;
+    $('#final-price').text(formatPrice(lastPrice));
     updateOrder();
+
+
 
     // sliders
     $('.news__slider').slick({
@@ -276,6 +311,8 @@ $(function () {
             }
         ]
     });
+
+
 
 
     // tooltip
@@ -347,39 +384,104 @@ $(function () {
 
     // promo block animation
     const $promoSection = $('.promo');
-    const $promoVideo = $('.promo__video-wrapper');
+    const $promoSlider = $('.promo__slider');
+    const $promoMedia = $('.promo__media');
     const $promoTitle = $('.promo__title');
-    const $promoBody = $('.promo__body');
+    const $cursor = $('.promo-cursor');
 
-    if ($promoSection.length && $promoVideo.length && $promoTitle.length) {
+    if ($promoSlider.length) {
+        $promoSlider.slick({
+            arrows: false,
+            dots: false,
+            infinite: true,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            fade: true,
+            cssEase: 'linear'
+        });
+    }
+
+    if ($promoSection.length && $promoMedia.length && $promoTitle.length) {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: $promoSection,
                 start: "top top",
-                end: `${$promoSection.outerHeight() / 2} 100px`,
+                end: () => `${$promoSection.outerHeight() / 2} 100px`,
                 scrub: 0.5,
+                onUpdate: () => {
+                    if ($promoSlider.length) {
+                        $promoSlider.slick('setPosition');
+                    }
+                }
             }
         });
 
-        const getMarginValue = () => {
-            return -((window.innerWidth - $promoBody.width()) / 2);
-        };
-
         tl.to($promoTitle, {
             opacity: 0,
-            y: `${$promoSection.outerHeight() / 3}px`,
+            y: () => $promoSection.outerHeight() / 3,
         }, 0)
-            .fromTo($promoVideo,
-                {
-                    marginLeft: 0,
-                    marginRight: 0,
-                },
-                {
-                    marginLeft: () => getMarginValue(),
-                    marginRight: () => getMarginValue(),
-                }, 0
+            .fromTo($promoMedia,
+                { maxWidth: 1620 },
+                { maxWidth: "100%" },
+                0
             );
+
+        window.addEventListener('resize', () => {
+            ScrollTrigger.refresh();
+            if ($promoSlider.length) {
+                $promoSlider.slick('setPosition');
+            }
+        });
     }
 
+    if ($promoMedia.length && $cursor.length) {
+        $promoMedia.on('mousemove', function (e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            gsap.to($cursor, {
+                left: x,
+                top: y,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+
+            if (x < rect.width / 2) {
+                $cursor.removeClass('is-right').addClass('is-left');
+            } else {
+                $cursor.removeClass('is-left').addClass('is-right');
+            }
+        });
+
+        $promoMedia.on('mouseenter', function () {
+            $(this).addClass('cursor-active');
+            gsap.to($cursor, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.3
+            });
+        });
+
+        $promoMedia.on('mouseleave', function () {
+            $(this).removeClass('cursor-active');
+            gsap.to($cursor, {
+                opacity: 0,
+                scale: 0,
+                duration: 0.3
+            });
+        });
+
+        $promoMedia.on('click', function (e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+
+            if (x < rect.width / 2) {
+                $promoSlider.slick('slickPrev');
+            } else {
+                $promoSlider.slick('slickNext');
+            }
+        });
+    }
 
 });
